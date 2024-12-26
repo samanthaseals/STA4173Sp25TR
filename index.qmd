@@ -1,0 +1,40 @@
+---
+page-layout: full
+title-block-banner: false
+---
+
+### Tentative Schedule
+
+| Day | Topic | Slides | In Class |
+|----|-------------|--|--|
+| R 01/09 | Review of Statistics, Introduction to R and Quarto | <!-- link to slides --> | <!-- link to activity --> |
+| T 01/14 | Independent and dependent *t* tests | <!-- link to slides --> | <!-- link to activity --> |
+| R 01/16 | How to conceptualize research questions as hypotheses | <!-- link to slides --> | <!-- link to activity --> |
+| T 01/21 | Optional meeting - Assignment 1 help | <!-- link to slides --> | <!-- link to activity --> |
+| R 01/23 | Assumptions on *t* tests, Wilcoxons | <!-- link to slides --> | <!-- link to activity --> |
+| T 01/28 | One-way ANOVA; posthoc testing | <!-- link to slides --> | <!-- link to activity --> |
+| R 01/30 | ANOVA assumptions; Kruskal-Wallis | <!-- link to slides --> | <!-- link to activity --> |
+| T 02/04 | Two-way ANOVA | <!-- link to slides --> | <!-- link to activity --> |
+| R 02/06 | Project 1: Prep | <!-- link to slides --> | <!-- link to activity --> |
+| T 02/11 | Project 1: Analysis | <!-- link to slides --> | <!-- link to activity --> |
+| R 02/13 | Project 1: Summary | <!-- link to slides --> | <!-- link to activity --> |
+| T 02/18 | Project 1: Revise & Submit | <!-- link to slides --> | <!-- link to activity --> |
+| R 02/20 | Correlation; simple linear regression | <!-- link to slides --> | <!-- link to activity --> |
+| T 02/25 | Multiple regression | <!-- link to slides --> | <!-- link to activity --> |
+| R 02/27 | Presentation of P1 | <!-- link to slides --> | <!-- link to activity --> |
+| T 03/04 | Multiple regression | <!-- link to slides --> | <!-- link to activity --> |
+| R 03/06 | Logistic regression | <!-- link to slides --> | <!-- link to activity --> |
+| T 03/11 | Assignment 3 | <!-- link to slides --> | <!-- link to activity --> |
+| R 03/13 | Project 2: Prep | <!-- link to slides --> | <!-- link to activity --> |
+| T 03/18 | Spring Break! | | |
+| R 03/20 | Spring Break! | | | 
+| T 03/25 | Project 2: Analysis & Summary | <!-- link to slides --> | <!-- link to activity --> |
+| R 03/27 | OUR: What is a Poster? | <!-- link to slides --> | <!-- link to activity --> |
+| T 04/01 | Project 2: Revision & Resubmission | <!-- link to slides --> | <!-- link to activity --> |
+| R 04/03 | Presentation of P2 | <!-- link to slides --> | <!-- link to activity --> |
+| T 04/08 | Work on poster with group | <!-- link to slides --> | <!-- link to activity --> |
+| R 04/10 | Individual group meetings with Dr. Seals | <!-- link to slides --> | <!-- link to activity --> | 
+| T 04/15 | Poster presentation practice | <!-- link to slides --> | <!-- link to activity --> |
+| R 04/17 | OUR Symposium | | | 
+| T 04/21 | Categorical analysis | <!-- link to slides --> | <!-- link to activity --> |
+| R 04/24 | Catch up! | | |
