@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Biostatistics - Spring 2025"
+  title: "<b>STA4173 - Biostatistics - Spring 2025</b>"
   navbar:
     collapse: false
     right:
