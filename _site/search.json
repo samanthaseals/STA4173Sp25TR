@@ -12,5 +12,341 @@
     "title": "<b>STA4173 - Biostatistics - Spring 2025</b>",
     "section": "",
     "text": "Tentative Schedule\n\n\n\n\n\n\n\n\n\nDay\nTopic\nSlides\nIn Class\n\n\n\n\nR 01/09\nReview of Statistics, Introduction to R and Quarto\n\n\n\n\nT 01/14\nIndependent and dependent t tests\n\n\n\n\nR 01/16\nHow to conceptualize research questions as hypotheses\n\n\n\n\nT 01/21\nOptional meeting - Assignment 1 help\n\n\n\n\nR 01/23\nAssumptions on t tests, Wilcoxons\n\n\n\n\nT 01/28\nOne-way ANOVA; posthoc testing\n\n\n\n\nR 01/30\nANOVA assumptions; Kruskal-Wallis\n\n\n\n\nT 02/04\nTwo-way ANOVA\n\n\n\n\nR 02/06\nProject 1: Prep\n\n\n\n\nT 02/11\nProject 1: Analysis\n\n\n\n\nR 02/13\nProject 1: Summary\n\n\n\n\nT 02/18\nProject 1: Revise & Submit\n\n\n\n\nR 02/20\nCorrelation; simple linear regression\n\n\n\n\nT 02/25\nMultiple regression\n\n\n\n\nR 02/27\nPresentation of P1\n\n\n\n\nT 03/04\nMultiple regression\n\n\n\n\nR 03/06\nLogistic regression\n\n\n\n\nT 03/11\nAssignment 3\n\n\n\n\nR 03/13\nProject 2: Prep\n\n\n\n\nT 03/18\nSpring Break!\n\n\n\n\nR 03/20\nSpring Break!\n\n\n\n\nT 03/25\nProject 2: Analysis & Summary\n\n\n\n\nR 03/27\nOUR: What is a Poster?\n\n\n\n\nT 04/01\nProject 2: Revision & Resubmission\n\n\n\n\nR 04/03\nPresentation of P2\n\n\n\n\nT 04/08\nWork on poster with group\n\n\n\n\nR 04/10\nIndividual group meetings with Dr. Seals\n\n\n\n\nT 04/15\nPoster presentation practice\n\n\n\n\nR 04/17\nOUR Symposium\n\n\n\n\nT 04/21\nCategorical analysis\n\n\n\n\nR 04/24\nCatch up!"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#introduction",
+    "href": "lectures/W01-L1-review-of-estimation.html#introduction",
+    "title": "Review of Statistical Estimation",
+    "section": "Introduction",
+    "text": "Introduction\n\nIn this lecture, we will review summary statistics\n\nContinuous variables\n\nMean\nMedian\nPercentiles / quartiles\nVariance and standard deviation\nInterquartile range\n\nCategorical variables\n\nCount\nPercentage"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-introduction",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-introduction",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Introduction",
+    "text": "Summary Statistics: Introduction\n\nIn this course, we will review formulas, but we will use R for computational purposes\n\nRemember to refer to the lecture notes for specific code needed\nCode is also available on this course’s GitHub repository\n\nWe can use base R for some things, but I try to stay in the tidyverse when possible.\nIf we need to install packages, we use the install.packages() function,\n\n\ninstall.packages(\"package name\")\n\n\nTo call packages in, we use the library() function,\n\n\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-mean",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-mean",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Mean",
+    "text": "Summary Statistics: Mean\n\nDefinition: sample arithmetic mean\n\n \\bar{x} = \\frac{\\sum_{i=1}^n x_i}{n} = \\frac{x_1 + x_2 + ... + x_n}{n} \n\nR syntax:\n\n\n# method 1: base R\nmean(vector_name) # if your variable is not part of a dataset\nmean(dataset_name$variable_name) # if your variable is part of a dataset\n\n# method 2: tidyverse\ndataset_name %&gt;% summarize(mean(variable_name))"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-mean-1",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-mean-1",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Mean",
+    "text": "Summary Statistics: Mean\n\nThe following data represent the first exam score of 10 randomly selected students in STA2023. Find the average exam score.\n\n\n82, 77, 90, 71, 62, 68, 74, 84, 94, 88\n\n\nscores &lt;- c(82, 77, 90, 71, 62, 68, 74, 84, 94, 88)\nmean(scores)\n\n[1] 79"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-mean-2",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-mean-2",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Mean",
+    "text": "Summary Statistics: Mean\n\nThe following data represent the first exam score of 10 randomly selected students in STA2023. Find the average exam score.\n\n\n82, 77, 90, 71, 62, 68, 74, 84, 94, 88\n\n\nscores &lt;- c(82, 77, 90, 71, 62, 68, 74, 84, 94, 88)\nmean(scores)\n\n[1] 79\n\n\n\n\nWhat happens to the mean if there is an extreme observation?\n\n\n82, 77, 90, 71, 26, 68, 74, 84, 94, 88\n\n\nscores &lt;- c(82, 77, 90, 71, 26, 68, 74, 84, 94, 88)\nmean(scores)\n\n[1] 75.4"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-variance-and-standard-deviation",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-variance-and-standard-deviation",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Variance and Standard Deviation",
+    "text": "Summary Statistics: Variance and Standard Deviation\n\nDefinition: sample variance\n\ns^2 = \\frac{\\sum_{i=1}^n x_i^2 - \\frac{(\\sum_{i=1}^n x_i)^2}{n}}{n-1}\n\nDefinition: sample standard deviation\n\ns = \\sqrt{s^2}\n\nR syntax:\n\n\n# method 1: base R\nvar(vector_name) or sd(vector_name) # if your variable is not part of a dataset\nvar(dataset_name$variable_name) or sd(dataset_name$variable_name) # if your variable is part of a dataset\n\n# method 2: tidyverse\ndataset_name %&gt;% summarize(var(variable_name), sd(variable_name))"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-variance-and-standard-deviation-1",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-variance-and-standard-deviation-1",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Variance and Standard Deviation",
+    "text": "Summary Statistics: Variance and Standard Deviation\n\nThe following data represent the first exam score of 10 randomly selected students in STA2023. Find the variance and standard deviation.\n\n\n82, 77, 90, 71, 62, 68, 74, 84, 94, 88\n\n\nscores &lt;- c(82, 77, 90, 71, 62, 68, 74, 84, 94, 88)\nvar(scores)\n\n[1] 107.1111\n\nsd(scores)\n\n[1] 10.34945"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-variance-and-standard-deviation-2",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-variance-and-standard-deviation-2",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Variance and Standard Deviation",
+    "text": "Summary Statistics: Variance and Standard Deviation\n\nThe following data represent the first exam score of 10 randomly selected students in STA2023. Find the standard deviation.\n\n\n82, 77, 90, 71, 62, 68, 74, 84, 94, 88\n\n\nscores &lt;- c(82, 77, 90, 71, 62, 68, 74, 84, 94, 88)\nsd(scores)\n\n[1] 10.34945\n\n\n\n\nWhat happens to the standard deviation if there is an extreme observation?\n\n\n82, 77, 90, 71, 26, 68, 74, 84, 94, 88\n\n\nscores &lt;- c(82, 77, 90, 71, 26, 68, 74, 84, 94, 88)\nsd(scores)\n\n[1] 19.30573"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-median",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-median",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Median",
+    "text": "Summary Statistics: Median\n\nDefinition: median\n\nThe value that lies in the middle of the data when arranged in ascending order.\n\nIf n is odd, then the median is literally the middle number.\nIf n is even, then the median is the average of the two middle numbers.\n\n\nR syntax:\n\n\n# method 1: base R\nmedian(vector_name) # if your variable is not part of a dataset\nmedian(dataset_name$variable_name) # if your variable is part of a dataset\n\n# method 2: tidyverse\ndataset_name %&gt;% summarize(median(variable_name))"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-median-1",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-median-1",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Median",
+    "text": "Summary Statistics: Median\n\nThe following data represent the first exam score of 10 randomly selected students in STA2023. Find the median exam score.\n\n\n82, 77, 90, 71, 62, 68, 74, 84, 94, 88\n\n\nscores &lt;- c(82, 77, 90, 71, 62, 68, 74, 84, 94, 88)\nmedian(scores)\n\n[1] 79.5"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-median-2",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-median-2",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Median",
+    "text": "Summary Statistics: Median\n\nThe following data represent the first exam score of 10 randomly selected students in STA2023. Find the median exam score.\n\n\n82, 77, 90, 71, 62, 68, 74, 84, 94, 88\n\n\nscores &lt;- c(82, 77, 90, 71, 62, 68, 74, 84, 94, 88)\nmedian(scores)\n\n[1] 79.5\n\n\n\n\nWhat happens to the median if there is an extreme observation?\n\n\n82, 77, 90, 71, 26, 68, 74, 84, 94, 88\n\n\nscores &lt;- c(82, 77, 90, 71, 26, 68, 74, 84, 94, 88)\nmedian(scores)\n\n[1] 79.5"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-percentiles",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-percentiles",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Percentiles",
+    "text": "Summary Statistics: Percentiles\n\nDefinition: kth percentile, Pk\n\nk% of the observations in the dataset are less than or equal to that value.\n\n\n\n\n\n\nR syntax:\n\n\nquantile(vector_name, percentile)  # if your variable is not part of a dataset\nquantile(dataset_name$variable_name, percentile) # if your variable is part of a dataset"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-percentiles-1",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-percentiles-1",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Percentiles",
+    "text": "Summary Statistics: Percentiles\n\nThe following data represent the first exam score of 10 randomly selected students in STA2023.\n\n\n82, 77, 90, 71, 62, 68, 74, 84, 94, 88\n\n\nscores &lt;- c(82, 77, 90, 71, 62, 68, 74, 84, 94, 88)\n\n\nWhat is the 45th percentile?\n\n\nquantile(scores, 0.45)\n\n  45% \n77.25 \n\n\n\nWhat is the 90th percentile?\n\n\nquantile(scores, 0.90)\n\n 90% \n90.4"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-quartiles",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-quartiles",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Quartiles",
+    "text": "Summary Statistics: Quartiles\n\nDefinition: quartiles\n\nValues that divide the dataset into fourths, or four equal parts: P25, P50 (median), P75\n\nDefinition: five number summary\n\nMinimum, P25, P50 (median), P75, maximum\n\n\n\n\n\n\nR Syntax:\n\n\nquantile(vector_name, c(0.00, 0.25, 0.50, 0.75, 1.00))  # if your variable is not part of a dataset\nquantile(dataset_name$variable_name, c(0.00, 0.25, 0.50, 0.75, 1.00)) # if your variable is part of a dataset"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-quartiles-1",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-quartiles-1",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Quartiles",
+    "text": "Summary Statistics: Quartiles\n\nThe following data represent the first exam score of 10 randomly selected students in STA2023. Find the five number summary.\n\n\n82, 77, 90, 71, 62, 68, 74, 84, 94, 88\n\n\nscores &lt;- c(82, 77, 90, 71, 62, 68, 74, 84, 94, 88)\nquantile(scores, c(0.00, 0.25, 0.50, 0.75, 1))\n\n   0%   25%   50%   75%  100% \n62.00 71.75 79.50 87.00 94.00"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-quartiles-2",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-quartiles-2",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Quartiles",
+    "text": "Summary Statistics: Quartiles\n\nThe following data represent the first exam score of 10 randomly selected students in STA2023. Find the five number summary.\n\n\n82, 77, 90, 71, 62, 68, 74, 84, 94, 88\n\n\nscores &lt;- c(82, 77, 90, 71, 62, 68, 74, 84, 94, 88)\nquantile(scores, c(0.00, 0.25, 0.50, 0.75, 1))\n\n   0%   25%   50%   75%  100% \n62.00 71.75 79.50 87.00 94.00 \n\n\n\n\nWhat happens to the five number summary if there is an extreme observation?\n\n\n82, 77, 90, 71, 26, 68, 74, 84, 94, 88\n\n\nscores &lt;- c(82, 77, 90, 71, 26, 68, 74, 84, 94, 88)\nquantile(scores, c(0.00, 0.25, 0.50, 0.75, 1))\n\n   0%   25%   50%   75%  100% \n26.00 71.75 79.50 87.00 94.00"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-interquartile-range",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-interquartile-range",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Interquartile Range",
+    "text": "Summary Statistics: Interquartile Range\n\nDefinition: interquartile range\n\nA measure of the spread of the middle half of the data\n\n\n\nP75 – P25\n\n\nR syntax:\n\n\n# method 1: base R\nIQR(vector_name) # if your variable is not part of a dataset\nIQR(dataset_name$variable_name) # if your variable is part of a dataset\n\n# method 2: tidyverse\ndataset_name %&gt;% summarize(IQR(variable_name))"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-interquartile-range-1",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-interquartile-range-1",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Interquartile Range",
+    "text": "Summary Statistics: Interquartile Range\n\nThe following data represent the first exam score of 10 randomly selected students in STA2023. Find the IQR.\n\n\n82, 77, 90, 71, 62, 68, 74, 84, 94, 88\n\n\nscores &lt;- c(82, 77, 90, 71, 62, 68, 74, 84, 94, 88)\nIQR(scores)\n\n[1] 15.25"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-interquartile-range-2",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-interquartile-range-2",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Interquartile Range",
+    "text": "Summary Statistics: Interquartile Range\n\nThe following data represent the first exam score of 10 randomly selected students in STA2023. Find the IQR.\n\n\n82, 77, 90, 71, 62, 68, 74, 84, 94, 88\n\n\nscores &lt;- c(82, 77, 90, 71, 62, 68, 74, 84, 94, 88)\nIQR(scores)\n\n[1] 15.25\n\n\n\n\nWhat happens to the IQR if there is an extreme observation?\n\n\n82, 77, 90, 71, 26, 68, 74, 84, 94, 88\n\n\nscores &lt;- c(82, 77, 90, 71, 26, 68, 74, 84, 94, 88)\nIQR(scores)\n\n[1] 15.25"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-frequency-tables",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-frequency-tables",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Frequency Tables",
+    "text": "Summary Statistics: Frequency Tables\n\nWhen we are dealing with categorical data, we summarize using frequency tables.\n\nWe are interested in the count and percentage\n\ne.g., from the UWF Fact Book, in Fall 2021, there were\n\n1273 (14.4%) freshmen\n1349 (15.2%) sophomores\n2431 (27.4%) juniors\n3807 (43.0%) seniors\n\nR syntax:\n\n\ndataset_name %&gt;%\n  group_by(var1_name, var2_name) %&gt;% # do not change anything under this\n  summarise(n = n()) %&gt;%\n  mutate(freq = n / sum(n))"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-frequency-tables-1",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-frequency-tables-1",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Frequency Tables",
+    "text": "Summary Statistics: Frequency Tables\n\nConsider the Motor Trends car road tests data, built into R.\nThe data was extracted from the 1974 Motor Trend magazine, and includes aspects of car design and performance for 32 cars (1973-74 models).\n\n\ndata(\"mtcars\")\nhead(mtcars, n=5)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#summary-statistics-frequency-table",
+    "href": "lectures/W01-L1-review-of-estimation.html#summary-statistics-frequency-table",
+    "title": "Review of Statistical Estimation",
+    "section": "Summary Statistics: Frequency Table",
+    "text": "Summary Statistics: Frequency Table\n\nLet’s find the frequency tables for the number of forward gears (gear) and the type of transmission (am; automatic vs. manual),\n\n\nmtcars %&gt;%\n  group_by(am, gear) %&gt;%\n  summarise(n = n()) %&gt;%\n  mutate(freq = n / sum(n))\n\n# A tibble: 4 × 4\n# Groups:   am [2]\n     am  gear     n  freq\n  &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;\n1     0     3    15 0.789\n2     0     4     4 0.211\n3     1     4     8 0.615\n4     1     5     5 0.385\n\n\n\nNote that these are overall frequencies."
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-introduction",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-introduction",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Introduction",
+    "text": "Data Visualization: Introduction\n\nWhen presenting results to others, sometimes it is helpful to create a visualization.\nContinuous data:\n\nHistogram (one variable)\nScatterplot (two variables)\n\nCategorical data:\n\nBar charts\n\nRelated to analyses:\n\nConfidence intervals\nRegression lines\n\nWe can also use color to incorporate other variables\n\ne.g., scatterplot with weight on y-axis, age on x-axis, markers colored by diabetic status"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-introduction-1",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-introduction-1",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Introduction",
+    "text": "Data Visualization: Introduction\n\nWe will use the ggplot2 package for most of our graphing needs.\n\nThis package is loaded in with the tidyverse package.\n\nA good reference book is the official ggplot2: elegant graphics for data analysis text.\n\nYou can buy a hard copy, however, it is available online for free.\n\nI will often google keywords + ggplot2 and look for examples that provide code.\n\ne.g., “histogram ggplot2” led me to this website\ne.g., “change color of dot ggplot2” led me to this website\nSometimes I have to look at several links before I find what I am looking for."
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-introduction-2",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-introduction-2",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Introduction",
+    "text": "Data Visualization: Introduction\n\nWe start with the ggplot() function to specify our underlying canvas.\n\n\n\nggplot()"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-introduction-3",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-introduction-3",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Introduction",
+    "text": "Data Visualization: Introduction\n\nWe will use the tidyverse pipe operator (%&gt;%) to pipe data into the ggplot() function.\n\n\n\ndataset %&gt;% ggplot()\n\n\n\nThen, we will specify the aesthetics using aes() inside of ggplot().\n\n\n\nmtcars %&gt;% ggplot(aes(x = hp, y = mpg))"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-introduction-4",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-introduction-4",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Introduction",
+    "text": "Data Visualization: Introduction\n\nWe will add elements to our graph using geom_ functions.\n\ngeom_line() creates a line\ngeom_point() creates a scatterplot\ngeom_bar() creates a bar chart\ngeom_text() puts text on the graph\nYou can find a list of geom_ functions on the tidyverse website\n\nThe order that you add them matters!\n\ngeom_line() + geom_point() = points on top of line\ngeom_point() + geom_line() = line on top of points"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-introduction-5",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-introduction-5",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Introduction",
+    "text": "Data Visualization: Introduction\n\nWe can also customize every aspect of our graphs.\n\ne.g., the default background is gray, but I personally do not like it, so I typically use theme_minimal() or theme_bw() to give a white background\ne.g., we can increase the font size to make things readable\ne.g., we can specify colors for: markers (dots/points), outline of a bar chart or histogram, filling of a bar chart or histogram, lines, text, etc.\n\nThere are additional functions within other (non-tidyverse) packages that will help us with customization.\n\nWe can put graphs together using the ggarrange() function in the ggpubr package\nWe can use geom_emoji() from the the emoGG to display emojis in graphs :)"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-introduction-6",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-introduction-6",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Introduction",
+    "text": "Data Visualization: Introduction\n\nI do not expect you to become an expert in data visualization\nAs with other R code, I will provide basic code during lecture\nI do encourage curiosity and exploring further\nR is a very, very powerful tool for graphing!\n\nEven before I was An Official R Programmer©, I used ggplot2 to construct graphs.\nOther programs are just not great. :(\n\nToday we will look at graphs that go along with summary statistics, but we will learn other ways to graph data as we progress through the semester."
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-histogram",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-histogram",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Histogram",
+    "text": "Data Visualization: Histogram\n\n\nex1 %&gt;% \n  ggplot(aes(x=value)) + \n  geom_histogram(bins=50) +\n  labs(x = \"value of variable\",\n       y = \"number of observations\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-histogram-1",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-histogram-1",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Histogram",
+    "text": "Data Visualization: Histogram\n\n\nex2 %&gt;% \n  ggplot(aes(x=value)) + \n  geom_histogram(bins=50) +\n  labs(x = \"value of variable\",\n       y = \"number of observations\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-histogram-2",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-histogram-2",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Histogram",
+    "text": "Data Visualization: Histogram\n\n\nex3 %&gt;% \n  ggplot(aes(x=value)) + \n  geom_histogram(bins=50) +\n  labs(x = \"value of variable\",\n       y = \"number of observations\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-histogram-3",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-histogram-3",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Histogram",
+    "text": "Data Visualization: Histogram\n\n\nex4 %&gt;% \n  ggplot(aes(x=value)) + \n  geom_histogram(binwidth = 0.1) +\n  labs(x = \"value of variable\",\n       y = \"number of observations\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-histogram-4",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-histogram-4",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Histogram",
+    "text": "Data Visualization: Histogram\n\n\nex4 %&gt;% \n  ggplot(aes(x=value)) + \n  geom_histogram(binwidth = 0.1, color = \"#003865\", fill = \"#8DC8E8\") +\n  labs(x = \"value of variable\",\n       y = \"number of observations\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-scatterplot",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-scatterplot",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Scatterplot",
+    "text": "Data Visualization: Scatterplot\n\n\nmtcars %&gt;% \n  ggplot(aes(y = mpg, x = hp)) + \n  geom_point() + \n  labs(x = \"Horsepower\",\n       y = \"Gas Mileage\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-scatterplot-1",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-scatterplot-1",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Scatterplot",
+    "text": "Data Visualization: Scatterplot\n\n\nmtcars %&gt;% \n  ggplot(aes(y = mpg, x = hp)) + \n  geom_point(size = 5) + \n  labs(x = \"Horsepower\",\n       y = \"Gas Mileage\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-scatterplot-2",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-scatterplot-2",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Scatterplot",
+    "text": "Data Visualization: Scatterplot\n\n\nmtcars %&gt;% \n  ggplot(aes(y = mpg, x = hp, color = am)) + \n  geom_point(size = 5) + \n  labs(x = \"Horsepower\",\n       y = \"Gas Mileage\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-scatterplot-3",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-scatterplot-3",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Scatterplot",
+    "text": "Data Visualization: Scatterplot\n\n\nmtcars %&gt;% \n  ggplot(aes(y = mpg, x = hp, color = as.factor(am))) + \n  geom_point(size = 5) + \n  labs(x = \"Horsepower\",\n       y = \"Gas Mileage\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-scatterplot-4",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-scatterplot-4",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Scatterplot",
+    "text": "Data Visualization: Scatterplot\n\n\nmtcars %&gt;% \n  ggplot(aes(y = mpg, x = hp, color = as.factor(am))) + \n  geom_point(size = 5) + \n  labs(x = \"Horsepower\",\n       y = \"Gas Mileage\",\n       color = \"Transmission\") +\n  scale_color_manual(labels = c(\"Automatic\", \"Manual\"),\n                     values = c(\"#003865\", \"#8DC8E8\")) +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-plot-of-means",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-plot-of-means",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Plot of Means",
+    "text": "Data Visualization: Plot of Means\n\n\nmeans &lt;- mtcars %&gt;%\n  group_by(cyl) %&gt;%\n  summarize(mean = mean(mpg)) %&gt;%\n  ungroup()\n\nmeans %&gt;% \n  ggplot(aes(y = mean, x = cyl)) + \n  geom_point(size = 5) + \n  labs(x = \"Number of Cylinders\",\n       y = \"Average Gas Mileage\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-plot-of-means-1",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-plot-of-means-1",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Plot of Means",
+    "text": "Data Visualization: Plot of Means"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-plot-of-means-2",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-plot-of-means-2",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Plot of Means",
+    "text": "Data Visualization: Plot of Means\n\n\nmeans &lt;- mtcars %&gt;%\n  group_by(cyl, am) %&gt;%\n  summarize(mean = mean(mpg)) %&gt;%\n  ungroup()\n\nmeans %&gt;% \n  ggplot(aes(y = mean, x = cyl, color = as.factor(am))) + \n  geom_point(size = 5) + \n  labs(x = \"Horsepower\",\n       y = \"Gas Mileage\",\n       color = \"Transmission\") +\n  scale_color_manual(labels = c(\"Automatic\", \"Manual\"),\n                     values = c(\"#003865\", \"#8DC8E8\")) +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-plot-of-means-3",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-plot-of-means-3",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Plot of Means",
+    "text": "Data Visualization: Plot of Means"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-plot-of-means-4",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-plot-of-means-4",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Plot of Means",
+    "text": "Data Visualization: Plot of Means\n\n\nmeans &lt;- mtcars %&gt;%\n  group_by(cyl, am) %&gt;%\n  summarize(mean = mean(mpg),\n            sd = sd(mpg)) %&gt;%\n  ungroup()\n\nmeans %&gt;% \n  ggplot(aes(y = mean, x = cyl, color = as.factor(am))) + \n  geom_point(size = 5) + \n  geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width = 0.15) +\n  labs(x = \"Horsepower\",\n       y = \"Gas Mileage\",\n       color = \"Transmission\") +\n  scale_color_manual(labels = c(\"Automatic\", \"Manual\"),\n                     values = c(\"#003865\", \"#8DC8E8\")) +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-plot-of-means-5",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-plot-of-means-5",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Plot of Means",
+    "text": "Data Visualization: Plot of Means"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-bar-chart",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-bar-chart",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Bar Chart",
+    "text": "Data Visualization: Bar Chart\n\n\nmtcars %&gt;% ggplot(aes(x=as.factor(cyl))) +\n  geom_bar() +\n  labs(x = \"Number of Cylinders\",\n       y = \"Number of Cars\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#data-visualization-bar-chart-1",
+    "href": "lectures/W01-L1-review-of-estimation.html#data-visualization-bar-chart-1",
+    "title": "Review of Statistical Estimation",
+    "section": "Data Visualization: Bar Chart",
+    "text": "Data Visualization: Bar Chart\n\n\nmtcars %&gt;% ggplot(aes(x=as.factor(cyl), fill=as.factor(am))) +\n  geom_bar(position = 'dodge') +\n  labs(x = \"Number of Cylinders\",\n       y = \"Number of Cars\",\n       fill = \"Transmission\") +\n  scale_fill_manual(labels = c(\"Automatic\", \"Manual\"),\n                     values = c(\"#003865\", \"#8DC8E8\")) +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/W01-L1-review-of-estimation.html#wrap-up",
+    "href": "lectures/W01-L1-review-of-estimation.html#wrap-up",
+    "title": "Review of Statistical Estimation",
+    "section": "Wrap Up",
+    "text": "Wrap Up\n\nIn lecture, we have reviewed how to describe data.\n\nSummary statistics\nBasic data visualization\n\nThere is not a one-size-fits-all graph!\n\nAlways keep in mind what is the story we are trying to tell and what aids in our explanation.\n\nNext, we will review statistical inference.\n\nConfidence intervals\nHypothsis testing"
   }
 ]
