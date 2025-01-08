@@ -10,7 +10,7 @@ website:
       - syllabus.qmd
       - index.qmd
       - icon: github
-        href: https://github.com/samanthaseals/STA4173Sp25TR
+        href: https://github.com/samanthaseals/STA4173Sp25TR/tree/main/files/lectures
   search: false
 
 format:
