@@ -11,25 +11,24 @@ title-block-banner: false
 
 | Day | Topic | Slides | In Class |
 |----|-------------|:--:|:--:|
-| R 01/09 | Review of Estimation | <a href="files/lectures/W01-L1-review-of-estimation.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/lectures/W01-L1-review-of-estimation.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a> | <a href="files/assignments/Assignment0.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/assignments/Assignment0.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a> |
-| T 01/14 | Independent and dependent *t* tests | <a href="files/lectures/W02-L1-t-tests.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/lectures/W02-L1-t-tests.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a> |
-| R 01/16 | How to conceptualize research questions as hypotheses | | |
-| T 01/21 | Optional meeting - Assignment 1 help | | |
-| R 01/23 | Assumptions on *t* tests, Wilcoxons | | |
-| T 01/28 | Assignment 1 | | |
-| R 01/30 | One-Way ANOVA and post-hoc tests | | |
-| T 02/04 | ANOVA assumptions; Kruskal-Wallis  | | |
-| R 02/06 | Project: planning meeting | | |
-| T 02/11 | Two-way ANOVA | | |
-| R 02/13 | Assignment 2 | | |
-| T 02/18 | Regression | | |
-| R 02/20 | Regression | | |
-| T 02/25 | Assigment 3 | | |
+| R 01/09 | Review of estimation | <a href="files/lectures/W01-L1-review-of-estimation.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/lectures/W01-L1-review-of-estimation.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a> | <a href="files/assignments/Assignment0.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/assignments/Assignment0.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a> |
+| T 01/14 | Independent *t* test | <a href="files/lectures/W02-L1-two-sample-t.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/lectures/W02-L1-two-sample-t.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a> |
+| Snow & Illness | dependent t-test | <a href="files/lectures/W04-L1-dependent-t.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/lectures/W04-L1-dependent-t.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a> |
+| | t-test assumptions | <a href="files/lectures/W04-L2-assumptions.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/lectures/W04-L2-assumptions.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a> |
+| | Wilcoxon rank sum (independent) | <a href="files/lectures/W04-L3-Wilcoxon-rank-sum.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/lectures/W04-L3-Wilcoxon-rank-sum.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a> |
+| | Wilcoxon signed rank (dependent) | <a href="files/lectures/W04-L4-Wilcoxon-signed-rank.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/lectures/W04-L4-Wilcoxon-signed-rank.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a> |
+| T 02/04 | Assignment 1 | | |
+| R 02/06 | Assignment 1 | | |
+| T 02/11 | Project: planning period | | |
+| R 02/13 | One-way ANOVA and posthoc | <a href="files/lectures/W06-L1-one-way-ANOVA-posthoc.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/lectures/W06-L1-one-way-ANOVA-posthoc.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a> |
+| T 02/18 | ANOVA assumptions & Kruskal-Wallis | | |
+| R 02/20 | Two-Way ANOVA | | |
+| T 02/25 | Simple linear regression and correlation | | |
 | R 02/27 | Project: planning meeting | | |
-| T 03/04 | Categorical analysis | | |
-| R 03/06 | Logistic regression | | |
-| T 03/11 | Assignment 4 | | |
-| R 03/13 | Project: planning meeting | | |
+| T 03/04 | Multiple regression | | |
+| R 03/06 | Categorical analysis | | |
+| T 03/11 | Logistic regression | | |
+| R 03/13 | Project: planning | | |
 | T 03/18 | Spring Break! | | |
 | R 03/20 | Spring Break! | | | 
 | T 03/25 | Project: analysis | | |
