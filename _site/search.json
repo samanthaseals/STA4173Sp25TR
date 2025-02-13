@@ -7,6 +7,293 @@
     "text": "Note: this is an abbreviated syllabus. The full syllabus is available through Classmate and/or Canvas.\n\nInstructor Information\n\nDr. Samantha Seals\nOffice: 4/344\n\n\n\nMeeting Times and Location\n\nMW 1:00-2:15 pm\nClassroom: 51/152\n\n\n\nOffice Hours\n\nMonday: 2:30–4:30 pm (Central)\nWednesday: 2:30–4:30 pm (Central)\nThursday: 10:00 am–12:00 pm (Central)\nOther times by appointment\n\n\n\nGrading and Evaluation\nThe course grade will be determined as follows:\n\nAssignments (25%): Each module will include an activity for students to complete using Quarto and R. The resulting .html file should be submitted to the designated dropbox on Canvas by 11:59 pm on the specified date (see Canvas).\nProject (40%): You will work with your research team to complete a research project. There will be several check ins completed during the project period. The resulting .pdf file should be submitted to the designated dropbox on Canvas by 11:59 pm on the specified date (see Canvas).\nOUR Symposium (10%): Each team will put together a research poster based on the project. All research teams will present their poster at the symposium.\nFinal Exam (25%): The final exam will be a timed concepts-based exam. While there may be some calculations needed, you will not be processing raw data. The final exam will be in class 11:00 am-1:30 pm on April 30, 2025.\n\n\n\nLate Policy\nAssigments have due dates, however, the dropboxes will not close until the end of the semester. All students are automatically granted “extensions” without question.\nNote that if there is not a submission when I go to grade (after the initial deadline), I will assign a zero (0) and request that you submit the assignment when you are able to. This is only for record keeping purposes. There is no penalty for submitting late and a full grade will be given upon review of your submission.\nExtensions are not available for the projects or final exam.\n\n\nImportant University Dates\n\n\n\n\n\n\n\nDate\nEvent\n\n\n\n\nJan 8 (Mon)\nSpring begins.\n\n\nJan 14 (Tues)\nDrop/Add period ends.\n\n\nJan 20 (Mon)\nMartin Luther King’s birthday - campus closed.\n\n\nMar 17-23 (Mon-Fri)\nSpring Break - campus closed.\n\n\nApr 7 (Mon)\nWithdrawal deadline (automatic grade of “W”).\n\n\nMay 5 (Fri)\nLate withdrawal deadline (“W” or “WF”, see requirements below)."
   },
   {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-analysis-of-variance",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-analysis-of-variance",
+    "title": "One-Way Analysis of Variance",
+    "section": "Introduction: Analysis of Variance",
+    "text": "Introduction: Analysis of Variance\n\nWe have previously discussed testing the difference between two groups.\n\nWhat about when there are three or more groups?\n\nWe will use a method called analysis of variance (ANOVA).\n\nThis method partitions the variance of the outcome into variance due to the groups and variance due to “other” factors.\n\nFun fact: the two-sample t-test is a special case of ANOVA.\n\nIf you perform ANOVA when comparing two means, you will obtain the same results as the two-sample t-test."
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#hypotheses",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#hypotheses",
+    "title": "One-Way Analysis of Variance",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\nHypotheses all take the same form:\n\nH_0: \\ \\mu_1 = \\mu_2 = ... = \\mu_k\nH_1: at least one is different\n\nNote 1: you must fill in the “k” when writing hypotheses!\n\ne.g., if there are four means, your hypotheses are\n\nH_0: \\ \\mu_1 = \\mu_2 = \\mu_3 = \\mu_4\nH_1: at least one is different\n\n\nNote 2: ANOVA does not tell us which means are different, just if a general difference exists!"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-table",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-table",
+    "title": "One-Way Analysis of Variance",
+    "section": "ANOVA Table",
+    "text": "ANOVA Table\n\nThe computations for ANOVA are more involved than what we’ve seen before.\nAn ANOVA table will be constructed in order to perform the hypothesis test.\n\n\n\n\n\n\n\n\n\n\n\nSource\nSum of Squares\ndf\nMean Squares\nF\n\n\n\n\nTreatment\nSSTrt\ndfTrt\nMSTrt\nF0\n\n\nError\nSSE\ndfE\nMSE\n\n\n\nTotal\nSSTot\ndfTot\n\n\n\n\n\n\nOnce this is put together, we can perform the hypothesis test.\n\nOur test statistic is the F0."
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#the-f-distribution",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#the-f-distribution",
+    "title": "One-Way Analysis of Variance",
+    "section": "The F Distribution",
+    "text": "The F Distribution\n\nThe F distribution is derived as the ratio of two variances.\n\nThe variances each have degrees of freedom: dfnumerator and dfdenominator\n\nThe F distribution’s shape depends on the df,"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations",
+    "title": "One-Way Analysis of Variance",
+    "section": "ANOVA Computations",
+    "text": "ANOVA Computations\n\nAgain, here’s where we are headed with our computations:\n\n\n\n\n\n\n\n\n\n\n\nSource\nSum of Squares\ndf\nMean Squares\nF\n\n\n\n\nTreatment\nSSTrt\ndfTrt\nMSTrt\nF0\n\n\nError\nSSE\ndfE\nMSE\n\n\n\nTotal\nSSTot\ndfTot\n\n\n\n\n\n\nWe are partitioning the variance of our outcome into:\n\nVariance due to the grouping (treatment)\nVariance due to “other” factors (error)\n\nThink of this like a “catch all” for other sources of error – things we did not adjust for in our model."
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-1",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-1",
+    "title": "One-Way Analysis of Variance",
+    "section": "ANOVA Computations",
+    "text": "ANOVA Computations\n\nBefore we begin our computations, it would be helpful if we know\n\n \\bar{x}, \\ \\ n_i, \\ \\ \\bar{x}_i, \\ \\ s_i^2 \n\nwhere,\n\n\\bar{x} is the overall mean,\nn_i is the sample size for group i,\n\\bar{x}_i is the mean for group i, and\ns_i^2 is the variance for group i"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-2",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-2",
+    "title": "One-Way Analysis of Variance",
+    "section": "ANOVA Computations",
+    "text": "ANOVA Computations\n\nWe begin our computations with the sums of squares:\n\n\n\\begin{align*}\n    \\text{SS}_{\\text{Trt}} &= \\sum_{i=1}^k n_i(\\bar{x}_i-\\bar{x})^2 \\\\\n    \\text{SS}_{\\text{E}} &= \\sum_{i=1}^k (n_i-1)s_i^2 \\\\\n    \\text{SS}_{\\text{Tot}} &= \\text{SS}_{\\text{Trt}} + \\text{SS}_{\\text{E}}\n\\end{align*}\n\n\nand each sum of squares has degrees of freedom:\n\n\\text{df}_{\\text{Trt}} = k-1 (number of groups – 1)\n\\text{df}_{\\text{E}} = n-k (overall sample size – number of groups)\n\\text{df}_{\\text{Tot}} = n-1 (overall sample size – 1) = \\text{df}_{\\text{Trt}} + \\text{df}_{\\text{E}}"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-3",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-3",
+    "title": "One-Way Analysis of Variance",
+    "section": "ANOVA Computations",
+    "text": "ANOVA Computations\n\nOnce we have the sum of squares and corresponding degrees of freedom, we have the mean squares.\nGenerally, mean squares are the sum of square divided by the df,  \\text{MS}_X = \\frac{\\text{SS}_X}{\\text{df}_X}\nIn the case of one-way ANOVA, \n\\begin{align*}\n  \\text{MS}_{\\text{Trt}} &= \\frac{\\text{SS}_{\\text{Trt}}}{\\text{df}_{\\text{Trt}}} \\\\\n  \\text{MS}_{\\text{E}} &= \\frac{\\text{SS}_{\\text{E}}}{\\text{df}_{\\text{E}}}\n\\end{align*}\n\n\nNote that there is no \\text{MS}_{\\text{Tot}}!"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-4",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-4",
+    "title": "One-Way Analysis of Variance",
+    "section": "ANOVA Computations",
+    "text": "ANOVA Computations\n\nFinally, we have the test statistic.\nGenerally, we construct an F for ANOVA by dividing the MS of interest by MS_{\\text{E}},  F_X = \\frac{\\text{MS}_X}{\\text{MS}_{\\text{E}}} \nIn one-way ANOVA, we are only constructing the F for treatment, F_0 = \\frac{\\text{MS}_{\\text{Trt}}}{\\text{MS}_{\\text{E}}}"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-5",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-5",
+    "title": "One-Way Analysis of Variance",
+    "section": "ANOVA Computations",
+    "text": "ANOVA Computations\n\nWe are finally done constructing our ANOVA table! As a reminder,\n\n\n\n\n\n\n\n\n\n\n\nSource\nSum of Squares\ndf\nMean Squares\nF\n\n\n\n\nTreatment\nSSTrt\ndfTrt\nMSTrt\nF0\n\n\nError\nSSE\ndfE\nMSE\n\n\n\nTotal\nSSTot\ndfTot"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-r-syntax",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-r-syntax",
+    "title": "One-Way Analysis of Variance",
+    "section": "ANOVA: R Syntax",
+    "text": "ANOVA: R Syntax\n\nWe can use the aov() and summary() functions.\n\n\nm &lt;- aov(continuous_variable ~ grouping_variable,\n         data = dataset_name)\nsummary(m)\n\n\nHowever, note that ANOVA is regression (and regression is ANOVA).\n\nWe can also use lm() to define the model and anova() to construct the ANOVA table.\n\n\n\nm &lt;- lm(continuous_variable ~ grouping_variable,\n         data = dataset_name)\nanova(m)"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental",
+    "title": "One-Way Analysis of Variance",
+    "section": "Example - Dental",
+    "text": "Example - Dental\n\nProsthodontists specialize in the restoration of oral function, including the use of dental implants, veneers, dentures, and crowns. A researcher wanted to compare the shear bond strength of different repair kits for repairs of chipped porcelain veneer.\nHe randomly divided 20 porcelain specimens into four treatment groups: group 1 used the Cojet system, group 2 used the Silistor system, group 3 used the Cimara system, and group 4 used the Ceramic Repair system.\nAt the conclusion of the study, shear bond strength (in megapascals, MPa) was measured according to ISO 10477. The data are as follows,\n\n\nstrength &lt;- c(15.4, 12.9, 17.2, 16.6, 19.3,\n              17.2, 14.3, 17.6, 21.6, 17.5,\n               5.5,  7.7, 12.2, 11.4, 16.4,\n              11.0, 12.4, 13.5,  8.9,  8.1)\nsystem &lt;- c(rep(\"Cojet\",5), rep(\"Silistor\",5), rep(\"Cimara\",5), rep(\"Ceramic\",5))\ndata &lt;- tibble(system, strength)"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental-1",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental-1",
+    "title": "One-Way Analysis of Variance",
+    "section": "Example - Dental",
+    "text": "Example - Dental\n\n\n\n  \n\n\n\n\nWhat is the continuous variable?\nWhat is the grouping variable?"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental-2",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental-2",
+    "title": "One-Way Analysis of Variance",
+    "section": "Example - Dental",
+    "text": "Example - Dental\n\nOur first step will be to construct an ANOVA table for the data.\n\n\nm1 &lt;- aov(strength ~ system, data = data)\nsummary(m1)\n\n            Df Sum Sq Mean Sq F value  Pr(&gt;F)   \nsystem       3  200.0   66.66   7.545 0.00229 **\nResiduals   16  141.4    8.84                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nm2 &lt;- lm(strength ~ system, data = data)\nanova(m2)"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#hypothesis-testing",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#hypothesis-testing",
+    "title": "One-Way Analysis of Variance",
+    "section": "Hypothesis Testing",
+    "text": "Hypothesis Testing\n\nHypotheses\n\nH_0: \\ \\mu_1 = \\mu_2 = ... = \\mu_k\nH_1: at least one mean is different\n\nTest Statistic\n\nF_0 (pulled from the ANOVA table)\n\np-Value\n\np = P[F_0 \\ge F_{\\text{df}_{\\text{Trt}}, \\text{df}_{\\text{E}}}]\n\nRejection Region\n\nReject H_0 if p&lt;\\alpha."
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental-3",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental-3",
+    "title": "One-Way Analysis of Variance",
+    "section": "Example - Dental",
+    "text": "Example - Dental\n\nUsing the dental data:\n\n\nsummary(m1)\n\n            Df Sum Sq Mean Sq F value  Pr(&gt;F)   \nsystem       3  200.0   66.66   7.545 0.00229 **\nResiduals   16  141.4    8.84                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nDetermine if there is a difference in average strength between the groups. Test at the \\alpha=0.01 level."
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental-4",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental-4",
+    "title": "One-Way Analysis of Variance",
+    "section": "Example - Dental",
+    "text": "Example - Dental\n\nHypotheses\n\nH_0: \\ \\mu_1 = \\mu_2 = \\mu_3 = \\mu_4\nH_1: at least one mean is different\n\nTest Statistic and p-Value\n\nF_0 = 7.545\np = 0.002\n\nRejection Region\n\nReject H_0 if p&lt;\\alpha; \\alpha = 0.01.\n\nConclusion/Interpretation\n\nReject H_0. There is sufficient evidence to suggest that there is a difference in average strength between the four groups."
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-posthoc-testing",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-posthoc-testing",
+    "title": "One-Way Analysis of Variance",
+    "section": "Introduction: Posthoc Testing",
+    "text": "Introduction: Posthoc Testing\n\nToday we have introduced ANOVA. Recall the hypotheses,\n\nH_0: \\mu_1 = \\mu_2 = ... = \\mu_k\nH_1: at least one \\mu_i is different\n\nThe F test does not tell us which mean is different… only that a difference exists.\nIn theory, we could perform repeated t tests to determine pairwise differences.\n\nRecall that ANOVA is an extension of the t test… or that the t test is a special case of ANOVA.\nHowever, this will increase the Type I error rate (\\alpha)."
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-posthoc-testing-1",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-posthoc-testing-1",
+    "title": "One-Way Analysis of Variance",
+    "section": "Introduction: Posthoc Testing",
+    "text": "Introduction: Posthoc Testing\n\nRecall that the Type I error rate, \\alpha, is the probability of incorrectly rejecting H_0.\n\ni.e., we are saying there is a difference between the means when there is actually not a difference.\n\nSuppose we are comparing 5 groups.\n\nThis is 10 pairwise comparisons!!\n\n1-2, 1-3, 1-4, 1-5, 2-3, 2-4, 2-5, 3-4, 3-5, 4-5\n\nIf we perform repeated t tests under \\alpha=0.05, we are inflating the Type I error to 0.40! 😵"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-posthoc-testing-2",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-posthoc-testing-2",
+    "title": "One-Way Analysis of Variance",
+    "section": "Introduction: Posthoc Testing",
+    "text": "Introduction: Posthoc Testing\n\nWhen performing posthoc comparisons, we can choose one of two paths:\n\nControl the Type I (familywise) error rate.\nDo not control the Type I error rate.\n\nNote that controlling the Type I error rate is more conservative than when we do not control it.\n\n“Conservative” = more difficult to reject.\n\nGenerally, statisticians:\n\ndo not control the Type I error rate if examining the results of pilot/preliminary studies that are exploring for general relationships.\ndo control the Type I error rate if examining the results of confirmatory studies and are attempting to confirm relationships observed in pilot/preliminary studies."
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-posthoc-testing-3",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-posthoc-testing-3",
+    "title": "One-Way Analysis of Variance",
+    "section": "Introduction: Posthoc Testing",
+    "text": "Introduction: Posthoc Testing\n\nThe posthoc tests we will learn:\n\nTukey’s test\n\nPerforms all pairwise tests and controls the Type I error rate\n\nFisher’s least significant difference\n\nPerforms all pairwise tests but does not control the Type I error rate\n\nDunnett’s test\n\nCompares each group to a control group and controls the Type I error rate\n\n\nCaution: we should only perform posthoc tests if we have determined that a general difference exists!\n\ni.e., we rejected when looking at the F test in ANOVA"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example",
+    "title": "One-Way Analysis of Variance",
+    "section": "Example",
+    "text": "Example\n\nRecall the dental example from earlier,\n\n\nm1 &lt;- aov(strength ~ system, data = data)\nsummary(m1)\n\n            Df Sum Sq Mean Sq F value  Pr(&gt;F)   \nsystem       3  200.0   66.66   7.545 0.00229 **\nResiduals   16  141.4    8.84                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nAre we justified in posthoc testing? (Recall: \\alpha=0.01)."
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#tukeys-test",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#tukeys-test",
+    "title": "One-Way Analysis of Variance",
+    "section": "Tukey’s Test",
+    "text": "Tukey’s Test\n\nTukey’s test allows us to do all pairwise comparisons while controlling \\alpha.\nThe underlying idea of the comparison:\n\nWe declare \\mu_i \\ne \\mu_j if |\\bar{y}_i - \\bar{y}_j| \\ge W, where  W = \\frac{q_{\\alpha}(k, \\text{df}_{\\text{E}})}{\\sqrt{2}} \\sqrt{\\text{MSE} \\left( \\frac{1}{n_i} + \\frac{1}{n_j} \\right)} \n\nq_{\\alpha}(k, \\text{df}_{\\text{E}}) is the critical value from the Studentized range distribution.\n\n\nWe will use the TukeyHSD() function.\n\nNote that this requires us to have created our model using the aov() function.\n\n\n\nm &lt;- aov(continuous_variable ~ grouping_variable, data = dataset_name)\nTukeyHSD(m)$grouping_variable"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#tukeys-test-1",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#tukeys-test-1",
+    "title": "One-Way Analysis of Variance",
+    "section": "Tukey’s Test",
+    "text": "Tukey’s Test\n\nLet’s apply Tukey’s to the dental data.\n\n\nm &lt;- aov(strength ~ system, data = data)\nTukeyHSD(m, conf.level = 0.99)$system\n\n                  diff         lwr       upr       p adj\nCimara-Ceramic   -0.14 -7.04151507  6.761515 0.999845202\nCojet-Ceramic     5.50 -1.40151507 12.401515 0.044147158\nSilistor-Ceramic  6.86 -0.04151507 13.761515 0.010458208\nCojet-Cimara      5.64 -1.26151507 12.541515 0.038206781\nSilistor-Cimara   7.00  0.09848493 13.901515 0.008990873\nSilistor-Cojet    1.36 -5.54151507  8.261515 0.886304336\n\n\n\nWhich are significantly different at the \\alpha=0.01 level?"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#fishers-test",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#fishers-test",
+    "title": "One-Way Analysis of Variance",
+    "section": "Fisher’s Test",
+    "text": "Fisher’s Test\n\nFisher’s allows us to test all pairwise comparisons but control the \\alpha.\nThe underlying idea of the comparison:\n\nWe declare \\mu_i \\ne \\mu_j if |\\bar{y}_i - \\bar{y}_j| \\ge \\text{LSD}, where  \\text{LSD} = t_{1-\\alpha/2, \\text{df}_\\text{E}} \\sqrt{\\text{MSE} \\left( \\frac{1}{n_i} + \\frac{1}{n_j} \\right)} \n\nWe will use the LSD.test() function from the agricolae package.\n\nNote that, like Tukey’s, this requires us to have created our model using the aov() function.\n\n\n\nlibrary(agricolae)\nresults &lt;- summary(m)\n(LSD.test(dataset_name$continuous_variable, # continuous outcome\n          dataset_name$grouping_variable, # grouping variable\n          results[[1]]$Df[2], # df_E\n          results[[1]]$`Mean Sq`[2], # MSE\n          alpha = alpha_level) # can omit if alpha = 0.05\n  )[5] # limit to only the pairwise comparison results"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#fishers-test-1",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#fishers-test-1",
+    "title": "One-Way Analysis of Variance",
+    "section": "Fisher’s Test",
+    "text": "Fisher’s Test\n\nLet’s apply Fisher’s to the dental data.\n\n\nlibrary(agricolae)\nresults &lt;- summary(m)\nLSD.test(data$strength, \n         data$system, \n         results[[1]]$Df[2], \n         results[[1]]$`Mean Sq`[2],\n         alpha = 0.01)[5]\n\n$groups\n         data$strength groups\nSilistor         17.64      a\nCojet            16.28      a\nCeramic          10.78      b\nCimara           10.64      b\n\n\n\nWhich are significantly different at the \\alpha=0.01 level?"
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#dunnetts-test",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#dunnetts-test",
+    "title": "One-Way Analysis of Variance",
+    "section": "Dunnett’s Test",
+    "text": "Dunnett’s Test\n\nDunnett’s test allows us to do all pairwise comparisons against only the control, while controlling \\alpha.\n\nThis has fewer comparisons than Tukey’s because we are not comparing non-control groups to one another.\ni.e., we are sharing the \\alpha between fewer comparisons now, which is preferred if we are not interested in the comparisons between non-control groups.\n\nThe underlying idea of the comparison:\n\nWe declare \\mu_i \\ne \\mu_j if |\\bar{y}_i - \\bar{y}_j| \\ge D, where  D = d_{\\alpha}(k-1, \\text{df}_{\\text{E}}) \\sqrt{\\text{MSE} \\left( \\frac{1}{n_i} + \\frac{1}{n_c} \\right)}, \n\nd_{\\alpha}(k-1, \\text{df}_{\\text{E}}) is the critical value from Dunnett’s table."
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#dunnetts-test-1",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#dunnetts-test-1",
+    "title": "One-Way Analysis of Variance",
+    "section": "Dunnett’s Test",
+    "text": "Dunnett’s Test\n\nWe will use the DunnettTest() function from the DescTools package to perform Dunnett’s test.\n\n\nlibrary(DescTools)\nDunnettTest(x=dataset_name$continuous_variable, \n            g=dataset_name$grouping_variable, \n            control = \"name of control group\")\n\n\nThe p-values are adjusted, so you can directly compare them to the specified \\alpha."
+  },
+  {
+    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#dunnetts-test-2",
+    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#dunnetts-test-2",
+    "title": "One-Way Analysis of Variance",
+    "section": "Dunnett’s Test",
+    "text": "Dunnett’s Test\n\nLet’s apply Dunnett’s to the dental data.\n\nWe will treat “Ceramic” as the control group.\n\n\n\nlibrary(DescTools)\nDunnettTest(x=data$strength, \n            g=data$system, \n            control = \"Ceramic\")\n\n\n  Dunnett's test for comparing several treatments with a control :  \n    95% family-wise confidence level\n\n$Ceramic\n                  diff     lwr.ci    upr.ci   pval    \nCimara-Ceramic   -0.14 -5.0138317  4.733832 0.9997    \nCojet-Ceramic     5.50  0.6261683 10.373832 0.0259 *  \nSilistor-Ceramic  6.86  1.9861683 11.733832 0.0059 ** \n\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nWhich are significantly different at the \\alpha=0.01 level?"
+  },
+  {
+    "objectID": "files/lectures/W04-L1-dependent-t.html#introduction",
+    "href": "files/lectures/W04-L1-dependent-t.html#introduction",
+    "title": "Dependent t-Tests",
+    "section": "Introduction",
+    "text": "Introduction\n\nIn the last lecture, we reviewed statistical inference on two independent means.\n\nCI for \\mu_1-\\mu_2\nHypothesis test for \\mu_1-\\mu_2 (two-sample t-test)\n\nToday, we will focus on drawing conclusions about two dependent means.\n\nCI for \\mu_d = \\mu_1-\\mu_2\nHypothesis test for \\mu_d = \\mu_1-\\mu_2 (paired t-test)"
+  },
+  {
+    "objectID": "files/lectures/W04-L1-dependent-t.html#independent-vs.-dependent-data",
+    "href": "files/lectures/W04-L1-dependent-t.html#independent-vs.-dependent-data",
+    "title": "Dependent t-Tests",
+    "section": "Independent vs. Dependent Data",
+    "text": "Independent vs. Dependent Data\n\n\n\n\nIndependent data\n\n\nAn individual selected for one sample does not dictate which individual is to be in a second sample.\nIn the data, there is not a way to link the individuals in the sample.\n\n\n\n\n\n\n\n\nDependent data\n\n\nAn individual selected to be in one sample is used to determine the individual in the second sample.\nIn the data, there is a way to link the individuals in the sample.\n\n\n\n\n\nExamples:\n\nTwo sections of STA4173\nProject grades in one section of STA4173\nMale and female penguins\nPrices online vs. in store at Target"
+  },
+  {
+    "objectID": "files/lectures/W04-L1-dependent-t.html#estimating-the-difference-between-two-dependent-means",
+    "href": "files/lectures/W04-L1-dependent-t.html#estimating-the-difference-between-two-dependent-means",
+    "title": "Dependent t-Tests",
+    "section": "Estimating the Difference Between Two Dependent Means",
+    "text": "Estimating the Difference Between Two Dependent Means\n\nWe are now interested in comparing two dependent groups.\nWe assume that the two groups come from the same population and are going to examine the difference,\n\n\nd = y_{i, 1} - y_{i, 2}\n\n\nAfter drawing samples, we have the following,\n\n\\bar{d} estimates \\mu_d,\ns^2_d estimates \\sigma^2_d, and\nn is the sample size."
+  },
+  {
+    "objectID": "files/lectures/W04-L1-dependent-t.html#ci-for-the-difference-between-two-dependent-means",
+    "href": "files/lectures/W04-L1-dependent-t.html#ci-for-the-difference-between-two-dependent-means",
+    "title": "Dependent t-Tests",
+    "section": "CI for the Difference Between Two Dependent Means",
+    "text": "CI for the Difference Between Two Dependent Means\n\n\n\n\n\\mathbf{(1-\\boldsymbol\\alpha)100\\%} confidence interval for \\mathbf{\\boldsymbol\\mu_d}\n\n\n \\bar{d} \\pm t_{\\alpha/2} \\frac{s_d}{\\sqrt{n}} \n\nwhere t_{\\alpha/2} has n-1 degrees of freedom.\nTo construct this interval, we require either:\n\nthe differences to be normally distributed or\nthe sample size is sufficiently large (n \\ge 30)\n\n\n\n\n\n\n\nR syntax:\n\n\nt.test(dataset_name$variable1_name,\n       dataset_name$variable2_name, \n       paired = TRUE, \n       conf.level = confidence_level)"
+  },
+  {
+    "objectID": "files/lectures/W04-L1-dependent-t.html#ci-for-the-difference-between-two-dependent-means-1",
+    "href": "files/lectures/W04-L1-dependent-t.html#ci-for-the-difference-between-two-dependent-means-1",
+    "title": "Dependent t-Tests",
+    "section": "CI for the Difference Between Two Dependent Means",
+    "text": "CI for the Difference Between Two Dependent Means\n\nInsurance adjusters are concerned about the high estimates they are receiving for auto repairs from garage I compared to garage II.\n15 cars were taken to both garages for separate estimates of repair costs.\n\n\nlibrary(tidyverse)\ngarage &lt;- tibble(g1 = c(17.6, 20.2, 19.5, 11.3, 13.0, \n                        16.3, 15.3, 16.2, 12.2, 14.8,\n                        21.3, 22.1, 16.9, 17.6, 18.4), \n                 g2 = c(17.3, 19.1, 18.4, 11.5, 12.7, \n                        15.8, 14.9, 15.3, 12.0, 14.2, \n                        21.0, 21.0, 16.1, 16.7, 17.5))\n\n\nConstruct the 95% confidence interval for the average difference between the two garages.\nRemember the R syntax:\n\n\nt.test(dataset_name$variable1_name,\n       dataset_name$variable2_name, \n       paired = TRUE, \n       conf.level = confidence_level)"
+  },
+  {
+    "objectID": "files/lectures/W04-L1-dependent-t.html#ci-for-the-difference-between-two-dependent-means-2",
+    "href": "files/lectures/W04-L1-dependent-t.html#ci-for-the-difference-between-two-dependent-means-2",
+    "title": "Dependent t-Tests",
+    "section": "CI for the Difference Between Two Dependent Means",
+    "text": "CI for the Difference Between Two Dependent Means\n\nt.test(garage$g1, \n       garage$g2, \n       paired = TRUE, \n       conf.level = 0.95)\n\n\n    Paired t-test\n\ndata:  garage$g1 and garage$g2\nt = 6.0234, df = 14, p-value = 3.126e-05\nalternative hypothesis: true mean difference is not equal to 0\n95 percent confidence interval:\n 0.3949412 0.8317254\nsample estimates:\nmean difference \n      0.6133333 \n\n\n\nThe 95% CI for \\mu_d, where d = x_{\\text{I}} - x_{\\text{II}} is (0.39, 0.83).\nFrom the problem statement:\n\nInsurance adjusters are concerned about the high estimates they are receiving for auto repairs from garage I compared to garage II.\n\nCan we say that estimates from garage I are higher than those from garage II?"
+  },
+  {
+    "objectID": "files/lectures/W04-L1-dependent-t.html#paired-t-test-for-two-dependent-means",
+    "href": "files/lectures/W04-L1-dependent-t.html#paired-t-test-for-two-dependent-means",
+    "title": "Dependent t-Tests",
+    "section": "Paired t-Test for Two Dependent Means",
+    "text": "Paired t-Test for Two Dependent Means\nHypotheses\n\nH_0: \\mu_d = \\mu_0 | H_0: \\mu_d \\le \\mu_0 | H_0: \\mu_d \\ge \\mu_0\nH_1: \\mu_d \\ne \\mu_0 | H_1: \\mu_d &gt; \\mu_0 | H_1: \\mu_d &lt; \\mu_0\n\nTest Statistic & p-Value\n\nt_0 = \\frac{\\bar{d}-\\mu_0}{\\frac{s_d}{\\sqrt{n}}}\np = 2 P[t \\ge |t_0|] | p = P[t \\ge |t_0|] | p = P[t \\le |t_0|]\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha.\n\nConclusion/Interpretation\n\n[Reject or fail to reject] H_0.\nThere [is or is not] sufficient evidence to suggest [alternative hypothesis in words]."
+  },
+  {
+    "objectID": "files/lectures/W04-L1-dependent-t.html#paired-t-test",
+    "href": "files/lectures/W04-L1-dependent-t.html#paired-t-test",
+    "title": "Dependent t-Tests",
+    "section": "Paired t-Test",
+    "text": "Paired t-Test\n\nR syntax:\n\n\nt.test(dataset_name$variable1_name, \n       dataset_name$variable2_name, \n       paired = TRUE, \n       mu = hypothesized_difference,\n       alternative = \"alternative\")\n\n\nImportant!!\n\nWe are estimating \\mu_1 - \\mu_2, but R is going to subtract in the order we state in the t.test() function."
+  },
+  {
+    "objectID": "files/lectures/W04-L1-dependent-t.html#paired-t-test-example",
+    "href": "files/lectures/W04-L1-dependent-t.html#paired-t-test-example",
+    "title": "Dependent t-Tests",
+    "section": "Paired t-Test: Example",
+    "text": "Paired t-Test: Example\n\nLet’s now formally determine if garage I’s estimates are higher than garage II’s. Test at the \\alpha=0.05 level.\nRecall the data,\n\n\ngarage &lt;- tibble(g1 = c(17.6, 20.2, 19.5, 11.3, 13.0, \n                        16.3, 15.3, 16.2, 12.2, 14.8,\n                        21.3, 22.1, 16.9, 17.6, 18.4), \n                 g2 = c(17.3, 19.1, 18.4, 11.5, 12.7, \n                        15.8, 14.9, 15.3, 12.0, 14.2, \n                        21.0, 21.0, 16.1, 16.7, 17.5))\n\n\nand the R syntax:\n\n\nt.test(dataset_name$variable1_name, \n       dataset_name$variable2_name, \n       paired = TRUE, \n       mu = hypothesized_difference,\n       alternative = \"alternative\")"
+  },
+  {
+    "objectID": "files/lectures/W04-L1-dependent-t.html#paired-t-test-example-1",
+    "href": "files/lectures/W04-L1-dependent-t.html#paired-t-test-example-1",
+    "title": "Dependent t-Tests",
+    "section": "Paired t-Test: Example",
+    "text": "Paired t-Test: Example\n\nt.test(garage$g1, \n       garage$g2,\n       paired = TRUE,\n       mu = 0,\n       alternative = \"greater\")\n\n\n    Paired t-test\n\ndata:  garage$g1 and garage$g2\nt = 6.0234, df = 14, p-value = 1.563e-05\nalternative hypothesis: true mean difference is greater than 0\n95 percent confidence interval:\n 0.4339886       Inf\nsample estimates:\nmean difference \n      0.6133333 \n\n\n\nAre the estimates from garage I significantly higher than those from garage II?"
+  },
+  {
+    "objectID": "files/lectures/W04-L1-dependent-t.html#paired-t-test-example-2",
+    "href": "files/lectures/W04-L1-dependent-t.html#paired-t-test-example-2",
+    "title": "Dependent t-Tests",
+    "section": "Paired t-Test: Example",
+    "text": "Paired t-Test: Example\nHypotheses\n\nH_0: \\ \\mu_{\\text{I}} \\le \\mu_{\\text{II}} OR \\mu_{d} \\le 0, where \\mu_d = \\mu_{\\text{I}} - \\mu_{\\text{II}}\nH_1: \\ \\mu_{\\text{I}} &gt; \\mu_{\\text{II}} OR \\mu_{d} &gt; 0\n\nTest Statistic and p-Value\n\nt_0 = 6.023\np &lt; 0.001\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha; \\alpha = 0.05.\n\nConclusion/Interpretation\n\nReject H_0.\nThere is sufficient evidence to suggest the estimates at garage I are higher than that of garage II."
+  },
+  {
+    "objectID": "files/lectures/W04-L1-dependent-t.html#wrap-up",
+    "href": "files/lectures/W04-L1-dependent-t.html#wrap-up",
+    "title": "Dependent t-Tests",
+    "section": "Wrap Up",
+    "text": "Wrap Up\n\nToday we reviewed the dependent t-test.\n\nConfidence intervals\nHypothesis testing\n\nNext lectures:\n\nAssumptions on t-tests.\nWilcoxon rank sum\nWilcoxon signed rank"
+  },
+  {
     "objectID": "files/lectures/W01-L1-review-of-estimation.html#introduction",
     "href": "files/lectures/W01-L1-review-of-estimation.html#introduction",
     "title": "Review of Statistical Estimation",
@@ -186,91 +473,210 @@
     "href": "index.html",
     "title": "<b>STA4173 - Biostatistics - Spring 2025</b>",
     "section": "",
-    "text": "Tentative Schedule\n\n\n\n\n\n\n\n\n\nDay\nTopic\nSlides\nIn Class\n\n\n\n\nR 01/09\nReview of Estimation\n \n \n\n\nT 01/14\nIndependent t test\n \n\n\n\nR 01/16\nResearch questions \\(\\to\\) hypotheses; dependent t-test\n \n\n\n\nT 01/21\nOptional meeting - Assignment 1 help\n\n\n\n\nR 01/23\nAssumptions on t tests, Wilcoxons\n\n\n\n\nT 01/28\nAssignment 1\n\n\n\n\nR 01/30\nOne-Way ANOVA and post-hoc tests\n\n\n\n\nT 02/04\nANOVA assumptions; Kruskal-Wallis\n\n\n\n\nR 02/06\nProject: planning meeting\n\n\n\n\nT 02/11\nTwo-way ANOVA\n\n\n\n\nR 02/13\nAssignment 2\n\n\n\n\nT 02/18\nRegression\n\n\n\n\nR 02/20\nRegression\n\n\n\n\nT 02/25\nAssigment 3\n\n\n\n\nR 02/27\nProject: planning meeting\n\n\n\n\nT 03/04\nCategorical analysis\n\n\n\n\nR 03/06\nLogistic regression\n\n\n\n\nT 03/11\nAssignment 4\n\n\n\n\nR 03/13\nProject: planning meeting\n\n\n\n\nT 03/18\nSpring Break!\n\n\n\n\nR 03/20\nSpring Break!\n\n\n\n\nT 03/25\nProject: analysis\n\n\n\n\nR 03/27\nOUR: What is a Poster?\n\n\n\n\nT 04/01\nProject: analysis\n\n\n\n\nR 04/03\nProject: summary\n\n\n\n\nT 04/08\nProject: poster draft\n\n\n\n\nR 04/10\nIndividual group meetings with Dr. Seals\n\n\n\n\nT 04/15\nPoster presentation practice\n\n\n\n\nR 04/17\nOUR Symposium\n\n\n\n\nT 04/22\nCatch up!\n\n\n\n\nR 04/24\nProject: reflections"
+    "text": "Tentative Schedule\n\n\n\n\n\n\n\n\n\nDay\nTopic\nSlides\nIn Class\n\n\n\n\nR 01/09\nReview of estimation\n \n \n\n\nT 01/14\nIndependent t test\n \n\n\n\nSnow & Illness\ndependent t-test\n \n\n\n\n\nt-test assumptions\n \n\n\n\n\nWilcoxon rank sum (independent)\n \n\n\n\n\nWilcoxon signed rank (dependent)\n \n\n\n\nT 02/04\nAssignment 1\n\n\n\n\nR 02/06\nAssignment 1\n\n\n\n\nT 02/11\nProject: planning period\n\n\n\n\nR 02/13\nOne-way ANOVA and posthoc\n \n\n\n\nT 02/18\nANOVA assumptions & Kruskal-Wallis\n\n\n\n\nR 02/20\nTwo-Way ANOVA\n\n\n\n\nT 02/25\nSimple linear regression and correlation\n\n\n\n\nR 02/27\nProject: planning meeting\n\n\n\n\nT 03/04\nMultiple regression\n\n\n\n\nR 03/06\nCategorical analysis\n\n\n\n\nT 03/11\nLogistic regression\n\n\n\n\nR 03/13\nProject: planning\n\n\n\n\nT 03/18\nSpring Break!\n\n\n\n\nR 03/20\nSpring Break!\n\n\n\n\nT 03/25\nProject: analysis\n\n\n\n\nR 03/27\nOUR: What is a Poster?\n\n\n\n\nT 04/01\nProject: analysis\n\n\n\n\nR 04/03\nProject: summary\n\n\n\n\nT 04/08\nProject: poster draft\n\n\n\n\nR 04/10\nIndividual group meetings with Dr. Seals\n\n\n\n\nT 04/15\nPoster presentation practice\n\n\n\n\nR 04/17\nOUR Symposium\n\n\n\n\nT 04/22\nCatch up!\n\n\n\n\nR 04/24\nProject: reflections"
   },
   {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#introduction",
-    "href": "files/lectures/W02-L2-dependent-t.html#introduction",
-    "title": "Dependent t-Tests",
+    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#introduction",
+    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#introduction",
+    "title": "Wilcoxon Rank Sum",
     "section": "Introduction",
-    "text": "Introduction\n\nIn the last lecture, we reviewed statistical inference on two independent means.\n\nCI for \\mu_1-\\mu_2\nHypothesis test for \\mu_1-\\mu_2 (two-sample t-test)\n\nToday, we will focus on drawing conclusions about two dependent means.\n\nCI for \\mu_d = \\mu_1-\\mu_2\nHypothesis test for \\mu_d = \\mu_1-\\mu_2 (paired t-test)"
+    "text": "Introduction\n\nWe last discussed assumptions on t-tests\n\nDependent / paired t-test: normality\nIndependent two-sample t-test: normality and variance\n\nIf we break the normality assumption, we must look to nonparametric methods."
   },
   {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#independent-vs.-dependent-data",
-    "href": "files/lectures/W02-L2-dependent-t.html#independent-vs.-dependent-data",
-    "title": "Dependent t-Tests",
-    "section": "Independent vs. Dependent Data",
-    "text": "Independent vs. Dependent Data\n\n\n\n\nIndependent data\n\n\nAn individual selected for one sample does not dictate which individual is to be in a second sample.\nIn the data, there is not a way to link the individuals in the sample.\n\n\n\n\n\n\n\n\nDependent data\n\n\nAn individual selected to be in one sample is used to determine the individual in the second sample.\nIn the data, there is a way to link the individuals in the sample.\n\n\n\n\n\nExamples:\n\nTwo sections of STA4173\nProject grades in one section of STA4173\nMale and female penguins\nPrices online vs. in store at Target"
+    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#introduction-1",
+    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#introduction-1",
+    "title": "Wilcoxon Rank Sum",
+    "section": "Introduction",
+    "text": "Introduction\n\nThe t-tests we have already learned are considered parametric methods.\n\nThere is a distributional assumption on the test.\n\nNonparametric methods do not have distributional assumptions.\n\nWe typically transform the data to their ranks and then perform calculations.\n\nWhy don’t we always use nonparametric methods?\n\nThey are often less efficient: a larger sample size is required to achieve the same probability of a Type I error.\nThey discard useful information :("
   },
   {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#estimating-mathbfboldsymbol-mu_d-boldsymbol-mu_1-boldsymbol-mu_2",
-    "href": "files/lectures/W02-L2-dependent-t.html#estimating-mathbfboldsymbol-mu_d-boldsymbol-mu_1-boldsymbol-mu_2",
-    "title": "Dependent t-Tests",
-    "section": "Estimating \\mathbf{\\boldsymbol \\mu_d = \\boldsymbol \\mu_1-\\boldsymbol \\mu_2}",
-    "text": "Estimating \\mathbf{\\boldsymbol \\mu_d = \\boldsymbol \\mu_1-\\boldsymbol \\mu_2}\n\nWe are now interested in comparing two dependent groups.\nWe assume that the two groups come from the same population and are going to examine the difference,\n\n\nd = y_{i, 1} - y_{i, 2}\n\n\nAfter drawing samples, we have the following,\n\n\\bar{d} estimates \\mu_d,\ns^2_d estimates \\sigma^2_d, and\nn is the sample size."
+    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#ranking-data",
+    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#ranking-data",
+    "title": "Wilcoxon Rank Sum",
+    "section": "Ranking Data",
+    "text": "Ranking Data\n\nIn the nonparametric tests we will be learning, the data will be ranked.\nLet us first consider a simple example, x: \\ 1, 7, 10, 2, 6, 8\nOur first step is to reorder the data:x: \\ 1, 2, 6, 7, 8, 10\nThen, we replace with the ranks:R: \\ 1, 2, 3, 4, 5, 6"
   },
   {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-mathbfboldsymbol-mu_d",
-    "href": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-mathbfboldsymbol-mu_d",
-    "title": "Dependent t-Tests",
-    "section": "Confidence Interval for \\mathbf{\\boldsymbol \\mu_d}",
-    "text": "Confidence Interval for \\mathbf{\\boldsymbol \\mu_d}\n\n\n\n\n\\mathbf{(1-\\boldsymbol\\alpha)100\\%} confidence interval for \\mathbf{\\boldsymbol\\mu_d}\n\n\n \\bar{d} \\pm t_{\\alpha/2} \\frac{s_d}{\\sqrt{n}} \n\nwhere t_{\\alpha/2} has n-1 degrees of freedom.\nTo construct this interval, we require either:\n\nthe differences to be normally distributed or\nthe sample size is sufficiently large (n \\ge 30)\n\n\n\n\n\n\n\nR syntax:\n\n\nt.test(dataset_name$variable1_name,\n       dataset_name$variable2_name, \n       paired = TRUE, \n       conf.level = confidence_level)"
+    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#ranking-data-1",
+    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#ranking-data-1",
+    "title": "Wilcoxon Rank Sum",
+    "section": "Ranking Data",
+    "text": "Ranking Data\n\nWhat if all data values are not unique?\n\nWe will assign the average ranks.\n\nFor example, x: \\ 9, 8, 8, 0, 3, 4, 4, 8\nLet’s reorder:x: \\ 0, 3, 4, 4, 8, 8, 8, 9\nRank ignoring ties:R: \\ 1, 2, 3, 4, 5, 6, 7, 8\nNow, the final rank:R: \\ 1, 2, 3.5, 3.5, 6, 6, 6, 8"
   },
   {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-mathbfboldsymbol-mu_d-example",
-    "href": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-mathbfboldsymbol-mu_d-example",
-    "title": "Dependent t-Tests",
-    "section": "Confidence Interval for \\mathbf{\\boldsymbol \\mu_d}: Example",
-    "text": "Confidence Interval for \\mathbf{\\boldsymbol \\mu_d}: Example\n\nInsurance adjusters are concerned about the high estimates they are receiving for auto repairs from garage I compared to garage II.\n15 cars were taken to both garages for separate estimates of repair costs.\n\n\nlibrary(tidyverse)\ngarage &lt;- tibble(g1 = c(17.6, 20.2, 19.5, 11.3, 13.0, \n                        16.3, 15.3, 16.2, 12.2, 14.8,\n                        21.3, 22.1, 16.9, 17.6, 18.4), \n                 g2 = c(17.3, 19.1, 18.4, 11.5, 12.7, \n                        15.8, 14.9, 15.3, 12.0, 14.2, \n                        21.0, 21.0, 16.1, 16.7, 17.5))\n\n\nConstruct the 95% confidence interval for the average difference between the two garages.\nRemember the R syntax:\n\n\nt.test(dataset_name$variable1_name,\n       dataset_name$variable2_name, \n       paired = TRUE, \n       conf.level = confidence_level)"
+    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum",
+    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum",
+    "title": "Wilcoxon Rank Sum",
+    "section": "Wilcoxon Rank Sum",
+    "text": "Wilcoxon Rank Sum\nHypotheses\n\nH_0: M_1 - M_2 = M_0 | H_0: M_1 - M_2 \\le M_0 | H_0: M_1 - M_2 \\ge M_0\nH_1: M_1 - M_2 \\ne M_0 | H_1: M_1 - M_2 &gt; M_0 | H_1: M_1 - M_2 &lt; M_0\n\nTest Statistic & p-Value\n\nT = \\sum R_{\\text{sample 1}} - \\frac{n_1(n_1+1)}{2}\np = (calculated by R :))\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha.\n\nConclusion/Interpretation\n\n[Reject or fail to reject] H_0.\nThere [is or is not] sufficient evidence to suggest [alternative hypothesis in words]."
   },
   {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-mathbfboldsymbol-mu_d-example-1",
-    "href": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-mathbfboldsymbol-mu_d-example-1",
-    "title": "Dependent t-Tests",
-    "section": "Confidence Interval for \\mathbf{\\boldsymbol \\mu_d}: Example",
-    "text": "Confidence Interval for \\mathbf{\\boldsymbol \\mu_d}: Example\n\nt.test(garage$g1, \n       garage$g2, \n       paired = TRUE, \n       conf.level = 0.95)\n\n\n    Paired t-test\n\ndata:  garage$g1 and garage$g2\nt = 6.0234, df = 14, p-value = 3.126e-05\nalternative hypothesis: true mean difference is not equal to 0\n95 percent confidence interval:\n 0.3949412 0.8317254\nsample estimates:\nmean difference \n      0.6133333 \n\n\n\nThe 95% CI for \\mu_d, where d = x_{\\text{I}} - x_{\\text{II}} is (0.39, 0.83).\nFrom the problem statement:\n\nInsurance adjusters are concerned about the high estimates they are receiving for auto repairs from garage I compared to garage II.\n\nCan we say that estimates from garage I are higher than those from garage II?"
+    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-1",
+    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-1",
+    "title": "Wilcoxon Rank Sum",
+    "section": "Wilcoxon Rank Sum",
+    "text": "Wilcoxon Rank Sum\n\nWe will use the wilcox.test() function to perform the test,\n\n\nwilcox.test(continuous_variable ~ grouping_variable,\n            data = dataset_name,\n            alternative = \"alternative\",\n            mu = hypothesized_value,\n            exact = FALSE)\n\n\nLike before, R will use the group that is “first” in the grouping variable.\n\n“First” is in terms of numeric or alphabetical."
   },
   {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#paired-t-test",
-    "href": "files/lectures/W02-L2-dependent-t.html#paired-t-test",
-    "title": "Dependent t-Tests",
-    "section": "Paired t-Test",
-    "text": "Paired t-Test\n\nR syntax:\n\n\nt.test(dataset_name$variable1_name, \n       dataset_name$variable2_name, \n       paired = TRUE, \n       mu = hypothesized_difference,\n       alternative = \"alternative\")\n\n\nImportant!!\n\nWe are estimating \\mu_1 - \\mu_2, but R is going to subtract in the order we state in the t.test() function."
+    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-2",
+    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-2",
+    "title": "Wilcoxon Rank Sum",
+    "section": "Wilcoxon Rank Sum",
+    "text": "Wilcoxon Rank Sum\n\nWhen exposed to an infection, a person typically develops antibodies. The extent to which the antibodies respond can be measured by looking at a person’s titer, which is a measure of the number of antibodies present. The higher the titer is, the more antibodies that are present.\nThe following data represent the titers of 11 ill people and 11 healthy people exposed to the tularemia virus in Vermont.\nIs the level of titer in the ill group greater than the level of titer in the healthy group? Use the \\alpha = 0.10 level of significance.\n\n\ntiter_levels &lt;- tibble(level = c(640, 160, 1280, 320, 80, 640, 640, 160, 1280, 640, 160, \n                                  10, 320, 160, 160, 320, 320, 10, 320, 320, 80, 640),\n                       group = c(rep(\"ill\",11), rep(\"healthy\",11)))\n\n\nRecall the R syntax,\n\n\nwilcox.test(continuous_variable ~ grouping_variable,\n            data = dataset_name,\n            alternative = \"alternative\",\n            mu = hypothesized_value,\n            exact = FALSE)"
   },
   {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#paired-t-test-1",
-    "href": "files/lectures/W02-L2-dependent-t.html#paired-t-test-1",
-    "title": "Dependent t-Tests",
-    "section": "Paired t-Test",
-    "text": "Paired t-Test\n\nR syntax:\n\n\nt.test(dataset_name$variable1_name, \n       dataset_name$variable2_name, \n       paired = TRUE, \n       mu = hypothesized_difference,\n       alternative = \"alternative\")\n\n\nImportant!!\n\nWe are estimating \\mu_1 - \\mu_2, but R is going to subtract in the order we state in the t.test() function.\n\ne.g., if we want to examine \\mu_d  = \\mu_{\\text{freshman}} - \\mu_{\\text{sophomore}}:\n\n\n\n\nt.test(students$freshman_gpa, \n       students$sophomore_gpa, \n       paired = TRUE, \n       mu = 0,\n       alternative = \"alternative\")\n\n\nt.test(students$sophomore_gpa, \n       students$freshman_gpa, \n       paired = TRUE, \n       mu = 0,\n       alternative = \"alternative\")"
+    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-3",
+    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-3",
+    "title": "Wilcoxon Rank Sum",
+    "section": "Wilcoxon Rank Sum",
+    "text": "Wilcoxon Rank Sum\n\nIs the level of titer in the ill group greater than the level of titer in the healthy group?\n\n\nwilcox.test(level ~ group, \n            data = titer_levels,\n            alternative = \"less\",\n            exact = FALSE)\n\n\n    Wilcoxon rank sum test with continuity correction\n\ndata:  level by group\nW = 35, p-value = 0.04657\nalternative hypothesis: true location shift is less than 0"
   },
   {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#paired-t-test-example",
-    "href": "files/lectures/W02-L2-dependent-t.html#paired-t-test-example",
-    "title": "Dependent t-Tests",
-    "section": "Paired t-Test: Example",
-    "text": "Paired t-Test: Example\n\nLet’s now formally determine if garage I’s estimates are higher than garage II’s. Test at the \\alpha=0.05 level.\nRecall the data,\n\n\ngarage &lt;- tibble(g1 = c(17.6, 20.2, 19.5, 11.3, 13.0, \n                        16.3, 15.3, 16.2, 12.2, 14.8,\n                        21.3, 22.1, 16.9, 17.6, 18.4), \n                 g2 = c(17.3, 19.1, 18.4, 11.5, 12.7, \n                        15.8, 14.9, 15.3, 12.0, 14.2, \n                        21.0, 21.0, 16.1, 16.7, 17.5))\n\n\nand the R syntax:\n\n\nt.test(dataset_name$variable1_name, \n       dataset_name$variable2_name, \n       paired = TRUE, \n       mu = hypothesized_difference,\n       alternative = \"alternative\")"
+    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-4",
+    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-4",
+    "title": "Wilcoxon Rank Sum",
+    "section": "Wilcoxon Rank Sum",
+    "text": "Wilcoxon Rank Sum\nHypotheses\n\nH_0: \\ M_{\\text{ill}} \\le M_{\\text{healthy}}\nH_1: \\ M_{\\text{ill}} &gt; M_{\\text{healthy}}\n\nTest Statistic and p-Value\n\nW_0 = 35\np = 0.047\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha; \\alpha = 0.10.\n\nConclusion/Interpretation\n\nReject H_0.\nThere is sufficient evidence to suggest that the level of titer in the ill group is greater than the level of titer in the healthy group."
   },
   {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#paired-t-test-example-1",
-    "href": "files/lectures/W02-L2-dependent-t.html#paired-t-test-example-1",
-    "title": "Dependent t-Tests",
-    "section": "Paired t-Test: Example",
-    "text": "Paired t-Test: Example\n\nt.test(garage$g1, \n       garage$g2,\n       paired = TRUE,\n       mu = 0,\n       alternative = \"greater\")\n\n\n    Paired t-test\n\ndata:  garage$g1 and garage$g2\nt = 6.0234, df = 14, p-value = 1.563e-05\nalternative hypothesis: true mean difference is greater than 0\n95 percent confidence interval:\n 0.4339886       Inf\nsample estimates:\nmean difference \n      0.6133333 \n\n\n\nAre the estimates from garage I significantly higher than those from garage II?"
-  },
-  {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#paired-t-test-example-2",
-    "href": "files/lectures/W02-L2-dependent-t.html#paired-t-test-example-2",
-    "title": "Dependent t-Tests",
-    "section": "Paired t-Test: Example",
-    "text": "Paired t-Test: Example\nHypotheses\n\nH_0: \\ \\mu_{\\text{I}} \\le \\mu_{\\text{II}} OR \\mu_{d} \\le 0, where \\mu_d = \\mu_{\\text{I}} - \\mu_{\\text{II}}\nH_1: \\ \\mu_{\\text{I}} &gt; \\mu_{\\text{II}} OR \\mu_{d} &gt; 0\n\nTest Statistic and p-Value\n\nt_0 = 6.023\np &lt; 0.001\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha; \\alpha = 0.05.\n\nConclusion/Interpretation\n\nReject H_0.\nThere is sufficient evidence to suggest the estimates at garage I are higher than that of garage II."
-  },
-  {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#wrap-up",
-    "href": "files/lectures/W02-L2-dependent-t.html#wrap-up",
-    "title": "Dependent t-Tests",
+    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wrap-up",
+    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wrap-up",
+    "title": "Wilcoxon Rank Sum",
     "section": "Wrap Up",
-    "text": "Wrap Up\n\nToday we reviewed the dependent t-test.\n\nConfidence intervals\nHypothesis testing\n\nNext lectures:\n\nAssumptions on t-tests.\nWilcoxon rank sum\nWilcoxon signed rank"
+    "text": "Wrap Up\n\nToday we reviewed the Wilcoxon rank sum test.\n\nNonparametric alternative to the two-sample t-test.\n\nNext lecture:\n\nWilcoxon signed rank"
+  },
+  {
+    "objectID": "files/lectures/W04-L2-assumptions.html#introduction-assumptions",
+    "href": "files/lectures/W04-L2-assumptions.html#introduction-assumptions",
+    "title": "t-Test Assumptions",
+    "section": "Introduction: Assumptions",
+    "text": "Introduction: Assumptions\n\nWe have now learned one- and two-sample t-tests.\nRecall, when we have two samples, they can be independent samples or dependent samples.\n\nIndependent samples: two-sample t-test\nDependent samples: paired t-test (one-sample t-test on difference)\n\nToday we will discuss how to assess the assumptions on t-tests."
+  },
+  {
+    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-set-up",
+    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-set-up",
+    "title": "t-Test Assumptions",
+    "section": "Normality Assumption: Set Up",
+    "text": "Normality Assumption: Set Up\n\nAll t-tests assume approximate normality of the data.\n\nIn the case of one-sample t-tests, the measure of interest must somewhat follow a normal distribution.\nIn the case of two-sample t-tests, the measure of interest in each group must somewhat follow a normal distribution.\n\nNote that a paired t-test is technically a one-sample t-test, so we will examine normality of the difference."
+  },
+  {
+    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-set-up-1",
+    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-set-up-1",
+    "title": "t-Test Assumptions",
+    "section": "Normality Assumption: Set Up",
+    "text": "Normality Assumption: Set Up\n\nThere are formal tests for normality (see article here), however, we will not use them.\n\nTests for normality are not well-endorsed by statisticians.\n\nInstead, we will assess normality using a quantile-quantile (q-q) plot.\n\nThis is a scatterplot that will form a 45° line if the assumed distribution is correct.\nHere is more information about q-q plots.\n\nWe will create q-q plots for:\n\nThe measurements in the case of the one-sample t-test.\nThe measurements from each group in the case of the two-sample t-test.\nThe difference between the groups in the case of the paired t-test."
+  },
+  {
+    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-r-syntax",
+    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-r-syntax",
+    "title": "t-Test Assumptions",
+    "section": "Normality Assumption: R Syntax",
+    "text": "Normality Assumption: R Syntax\n\nWe will assess the normality assumption graphically using a q-q plot\nA package was written by a former student, classpackage.\n\nIf you are working on the server, the package is already installed.\nIf you are not working on the server, please ask me for the code needed to install."
+  },
+  {
+    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-independent-data---r-syntax",
+    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-independent-data---r-syntax",
+    "title": "t-Test Assumptions",
+    "section": "Normality Assumption: Independent Data - R Syntax",
+    "text": "Normality Assumption: Independent Data - R Syntax\n\nOnce installed, we call the package,\n\n\nlibrary(classpackage)\n\n\nWhile there are several functions in this package, we are currently interested in the independent_qq_plot() function.\n\n\ndataset_name %&gt;% independent_qq_plot(variable = \"continuous variable\",\n                                     grouping_variable = \"grouping variable\")\n\n\nThis will provide the the q-q plot for the two-sample t-test (i.e., for independent data)."
+  },
+  {
+    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-independent-data---example",
+    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-independent-data---example",
+    "title": "t-Test Assumptions",
+    "section": "Normality Assumption: Independent Data - Example",
+    "text": "Normality Assumption: Independent Data - Example\n\nRecall the penguin example for the two-sample t-test.\n\nIs the body mass different for males and females?\n\n\n\npenguins &lt;- palmerpenguins::penguins\nhead(penguins, n=3)\n\n\n  \n\n\n\n\nRequesting the q-q plot,\n\n\npenguins %&gt;% independent_qq_plot(variable = \"body_mass_g\",\n                                 grouping_variable = \"sex\")"
+  },
+  {
+    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-independent-data---example-1",
+    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-independent-data---example-1",
+    "title": "t-Test Assumptions",
+    "section": "Normality Assumption: Independent Data - Example",
+    "text": "Normality Assumption: Independent Data - Example"
+  },
+  {
+    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-dependent-data---r-syntax",
+    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-dependent-data---r-syntax",
+    "title": "t-Test Assumptions",
+    "section": "Normality Assumption: Dependent Data - R Syntax",
+    "text": "Normality Assumption: Dependent Data - R Syntax\n\nWhile there are several functions in the classpackage package, we are now interested in the dependent_qq_plot() function.\n\n\nwide_data %&gt;% dependent_qq_plot(variable = \"Display Name of Continuous Variable\",\n                                grouping_variable = \" \", # do not edit this line\n                                first_group = \"first_variable\", # first column for comparison\n                                second_group = \"second_variable\") # second column for comparison\n\n\nThis will provide the the q-q plot for the paired t-test (i.e., for dependent data)."
+  },
+  {
+    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-repair-estimates",
+    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-repair-estimates",
+    "title": "t-Test Assumptions",
+    "section": "Normality Assumption: Repair Estimates",
+    "text": "Normality Assumption: Repair Estimates\n\nRecall the repair estimate example for the dependent t-test.\n\n\ngarage &lt;- tibble(g1 = c(17.6, 20.2, 19.5, 11.3, 13.0, \n                        16.3, 15.3, 16.2, 12.2, 14.8,\n                        21.3, 22.1, 16.9, 17.6, 18.4), \n                 g2 = c(17.3, 19.1, 18.4, 11.5, 12.7, \n                        15.8, 14.9, 15.3, 12.0, 14.2, \n                        21.0, 21.0, 16.1, 16.7, 17.5))\n\n\nRequesting the q-q plot,\n\n\ngarage %&gt;% dependent_qq_plot(variable = \"estimate\",\n                             grouping_variable = \"garage\",\n                             first_group = \"g1\",\n                             second_group = \"g2\")"
+  },
+  {
+    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-repair-estimates-1",
+    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-repair-estimates-1",
+    "title": "t-Test Assumptions",
+    "section": "Normality Assumption: Repair Estimates",
+    "text": "Normality Assumption: Repair Estimates"
+  },
+  {
+    "objectID": "files/lectures/W04-L2-assumptions.html#wrap-up",
+    "href": "files/lectures/W04-L2-assumptions.html#wrap-up",
+    "title": "t-Test Assumptions",
+    "section": "Wrap Up",
+    "text": "Wrap Up\n\nImportant note!!\n\nI do not expect you to agree with my assessment of q-q plots!\nWhat I do expect is that you know what to do after making your assessment.\n\nNext up:\n\nWhat happens if we do not meet the assumption for a t-test….?"
+  },
+  {
+    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#introduction",
+    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#introduction",
+    "title": "Wilcoxon Signed Rank",
+    "section": "Introduction",
+    "text": "Introduction\n\nToday we have discussed that we turn to nonparametric tests when we do not meet distributional assumptions for t-tests.\nIf we do not meet the normality assumption for the paired t-test, we turn to the Wilcoxon signed rank.\nLike in the dependent t-test, we will analyze the difference between two values.\nLike in the Wilcoxon rank sum, we will be analyzing ranks."
+  },
+  {
+    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank",
+    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank",
+    "title": "Wilcoxon Signed Rank",
+    "section": "Wilcoxon Signed Rank",
+    "text": "Wilcoxon Signed Rank\n\nBefore ranking, we will find the difference between the paired observations and eliminate any 0 differences.\n\nNote 1: elimniating 0 differences is the big difference between the other tests!\nNote 2: because we are eliminating 0 differences, this means that our sample size will update to the number of pairs with a non-0 difference.\n\nWhen ranking, we the differences are ranked based on the absolute value of the difference.\nWe also keep the sign of the difference.\n\nWe will have positive ranks and negative ranks.\n\n\n\n\n\nX\nY\nD\n|D|\nRank\n\n\n\n\n5\n8\n-3\n3\n- 1.5\n\n\n8\n5\n3\n3\n+ 1.5\n\n\n4\n4\n0\n0\n———"
+  },
+  {
+    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-1",
+    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-1",
+    "title": "Wilcoxon Signed Rank",
+    "section": "Wilcoxon Signed Rank",
+    "text": "Wilcoxon Signed Rank\nHypotheses\n\nH_0: M_d = M_0 | H_0: M_d \\le M_0 | H_0: M_d \\ge M_0\nH_1: M_d \\ne M_0 | H_1: M_d &gt; M_0 | H_1: M_d &lt; M_0\n\nTest Statistic & p-Value\n\nT_0 = \\min(T+,|T_-|) if two-tailed, T_0 = T_+ if left-tailed, and T_0 = |T_-| if right-tailed.\np = (calculated by R :))\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha.\n\nConclusion/Interpretation\n\n[Reject or fail to reject] H_0.\nThere [is or is not] sufficient evidence to suggest [alternative hypothesis in words]."
+  },
+  {
+    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-2",
+    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-2",
+    "title": "Wilcoxon Signed Rank",
+    "section": "Wilcoxon Signed Rank",
+    "text": "Wilcoxon Signed Rank\n\nWe will again use the wilcox.test() function to perform the test,\n\n\nwilcox.test(dataset$variable1, dataset$variable2,\n       alternative = \"alternative\",\n       mu = hypothesized_value,\n       paired = TRUE,\n       exact = FALSE)"
+  },
+  {
+    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-3",
+    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-3",
+    "title": "Wilcoxon Signed Rank",
+    "section": "Wilcoxon Signed Rank",
+    "text": "Wilcoxon Signed Rank\n\nA stock analyst believes the median number of shares traded in Walgreens Boots Alliance (WBA) stock is greater than that in McDonald’s (MCD). Test the analyst’s belief at the \\alpha=0.05 level of significance.\n\n\nstocks &lt;- tibble(WBA = c(8.9, 6.3, 6.2, 7.2, 2.8, 3.3, 23.6, \n                         6.0, 15.6, 5.2, 6.3, 10.1, 4.0, 8.4),\n                 MCD = c(8.5, 7.6, 8.3, 10.4, 2.5, 2.6, 3.5, \n                         4.7, 9.0, 6.0, 5.6, 5.0, 4.4, 5.6))\n\n\nRecall the R syntax,\n\n\nwilcox.test(dataset$variable1, dataset$variable2,\n       alternative = \"alternative\",\n       mu = hypothesized_value,\n       paired = TRUE,\n       exact = FALSE)"
+  },
+  {
+    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-4",
+    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-4",
+    "title": "Wilcoxon Signed Rank",
+    "section": "Wilcoxon Signed Rank",
+    "text": "Wilcoxon Signed Rank\n\nFrom the problem statement: A stock analyst believes the median number of shares traded in Walgreens Boots Alliance (WBA) stock is greater than that in McDonald’s (MCD).\n\n\nwilcox.test(stocks$WBA, stocks$MCD,\n       alternative = \"greater\",\n       paired = TRUE, \n       exact = FALSE)\n\n\n    Wilcoxon signed rank test with continuity correction\n\ndata:  stocks$WBA and stocks$MCD\nV = 69, p-value = 0.1575\nalternative hypothesis: true location shift is greater than 0"
+  },
+  {
+    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-5",
+    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-5",
+    "title": "Wilcoxon Signed Rank",
+    "section": "Wilcoxon Signed Rank",
+    "text": "Wilcoxon Signed Rank\n\nHypotheses\n\nH_0: \\ M_{\\text{WBA}} \\le M_{\\text{MCD}} OR M_d \\le 0, where d = \\text{WBA} - \\text{MCD}\nH_1: \\ M_{\\text{WBA}} &gt; M_{\\text{MCD}} OR M_d &gt; 0\n\nTest Statistic and p-Value\n\nV_0 = 69\np = 0.158\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha; \\alpha = 0.05.\n\nConclusion/Interpretation\n\nFail to reject H_0.\nThere is not sufficient evidence to suggest that the median stock shares traded is greater for WBA than for MCD."
+  },
+  {
+    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wrap-up",
+    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wrap-up",
+    "title": "Wilcoxon Signed Rank",
+    "section": "Wrap Up",
+    "text": "Wrap Up\n\nToday we reviewed the Wilcoxon signed rank test.\n\nNonparametric alternative to the paired t-test.\n\nThis completes Module 1.\nNext: comparing three or more groups."
   },
   {
     "objectID": "files/lectures/W02-L1-two-sample-t.html#introduction",
@@ -467,936 +873,5 @@
     "title": "Review: Inferential Statistics & Two-Sample t-Tests",
     "section": "Wrap Up",
     "text": "Wrap Up\n\nToday we reviewed statistical inference.\n\nConfidence intervals\nHypothesis testing\n\nGet to know you quiz - complete with RStudio - due today.\nNext meeting: how to conceptualize research questions; dependent t-test."
-  },
-  {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#estimating-mu_d-mu_1-mu_2",
-    "href": "files/lectures/W02-L2-dependent-t.html#estimating-mu_d-mu_1-mu_2",
-    "title": "Dependent t-Tests",
-    "section": "Estimating \\mu_d = \\mu_1-\\mu_2",
-    "text": "Estimating \\mu_d = \\mu_1-\\mu_2\n\nWe are now interested in comparing two dependent groups.\nWe assume that the two groups come from the same population and are going to examine the difference,\n\n\nd = y_{i, 1} - y_{i, 2}\n\n\nAfter drawing samples, we have the following,\n\n\\bar{d} estimates \\mu_d,\ns^2_d estimates \\sigma^2_d, and\nn is the sample size."
-  },
-  {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-mu_d",
-    "href": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-mu_d",
-    "title": "Dependent t-Tests",
-    "section": "Confidence Interval for \\mu_d",
-    "text": "Confidence Interval for \\mu_d\n\n\n\n\n\\mathbf{(1-\\boldsymbol\\alpha)100\\%} confidence interval for \\mathbf{\\boldsymbol\\mu_d}\n\n\n \\bar{d} \\pm t_{\\alpha/2} \\frac{s_d}{\\sqrt{n}} \n\nwhere t_{\\alpha/2} has n-1 degrees of freedom.\nTo construct this interval, we require either:\n\nthe differences to be normally distributed or\nthe sample size is sufficiently large (n \\ge 30)\n\n\n\n\n\n\n\nR syntax:\n\n\nt.test(dataset_name$variable1_name,\n       dataset_name$variable2_name, \n       paired = TRUE, \n       conf.level = confidence_level)"
-  },
-  {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-mu_d-example",
-    "href": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-mu_d-example",
-    "title": "Dependent t-Tests",
-    "section": "Confidence Interval for \\mu_d: Example",
-    "text": "Confidence Interval for \\mu_d: Example\n\nInsurance adjusters are concerned about the high estimates they are receiving for auto repairs from garage I compared to garage II.\n15 cars were taken to both garages for separate estimates of repair costs.\n\n\nlibrary(tidyverse)\ngarage &lt;- tibble(g1 = c(17.6, 20.2, 19.5, 11.3, 13.0, \n                        16.3, 15.3, 16.2, 12.2, 14.8,\n                        21.3, 22.1, 16.9, 17.6, 18.4), \n                 g2 = c(17.3, 19.1, 18.4, 11.5, 12.7, \n                        15.8, 14.9, 15.3, 12.0, 14.2, \n                        21.0, 21.0, 16.1, 16.7, 17.5))\n\n\nConstruct the 95% confidence interval for the average difference between the two garages.\nRemember the R syntax:\n\n\nt.test(dataset_name$variable1_name,\n       dataset_name$variable2_name, \n       paired = TRUE, \n       conf.level = confidence_level)"
-  },
-  {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-mu_d-example-1",
-    "href": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-mu_d-example-1",
-    "title": "Dependent t-Tests",
-    "section": "Confidence Interval for \\mu_d: Example",
-    "text": "Confidence Interval for \\mu_d: Example\n\nt.test(garage$g1, \n       garage$g2, \n       paired = TRUE, \n       conf.level = 0.95)\n\n\n    Paired t-test\n\ndata:  garage$g1 and garage$g2\nt = 6.0234, df = 14, p-value = 3.126e-05\nalternative hypothesis: true mean difference is not equal to 0\n95 percent confidence interval:\n 0.3949412 0.8317254\nsample estimates:\nmean difference \n      0.6133333 \n\n\n\nThe 95% CI for \\mu_d, where d = x_{\\text{I}} - x_{\\text{II}} is (0.39, 0.83).\nFrom the problem statement:\n\nInsurance adjusters are concerned about the high estimates they are receiving for auto repairs from garage I compared to garage II.\n\nCan we say that estimates from garage I are higher than those from garage II?"
-  },
-  {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#estimating-the-difference-between-two-dependent-means",
-    "href": "files/lectures/W02-L2-dependent-t.html#estimating-the-difference-between-two-dependent-means",
-    "title": "Dependent t-Tests",
-    "section": "Estimating the Difference Between Two Dependent Means",
-    "text": "Estimating the Difference Between Two Dependent Means\n\nWe are now interested in comparing two dependent groups.\nWe assume that the two groups come from the same population and are going to examine the difference,\n\n\nd = y_{i, 1} - y_{i, 2}\n\n\nAfter drawing samples, we have the following,\n\n\\bar{d} estimates \\mu_d,\ns^2_d estimates \\sigma^2_d, and\nn is the sample size."
-  },
-  {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-the-difference-between-two-dependent-means",
-    "href": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-the-difference-between-two-dependent-means",
-    "title": "Dependent t-Tests",
-    "section": "Confidence Interval for the Difference Between Two Dependent Means",
-    "text": "Confidence Interval for the Difference Between Two Dependent Means\n\n\n\n\n\\mathbf{(1-\\boldsymbol\\alpha)100\\%} confidence interval for \\mathbf{\\boldsymbol\\mu_d}\n\n\n \\bar{d} \\pm t_{\\alpha/2} \\frac{s_d}{\\sqrt{n}} \n\nwhere t_{\\alpha/2} has n-1 degrees of freedom.\nTo construct this interval, we require either:\n\nthe differences to be normally distributed or\nthe sample size is sufficiently large (n \\ge 30)\n\n\n\n\n\n\n\nR syntax:\n\n\nt.test(dataset_name$variable1_name,\n       dataset_name$variable2_name, \n       paired = TRUE, \n       conf.level = confidence_level)"
-  },
-  {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-the-difference-between-two-dependent-means-1",
-    "href": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-the-difference-between-two-dependent-means-1",
-    "title": "Dependent t-Tests",
-    "section": "Confidence Interval for the Difference Between Two Dependent Means",
-    "text": "Confidence Interval for the Difference Between Two Dependent Means\n\nInsurance adjusters are concerned about the high estimates they are receiving for auto repairs from garage I compared to garage II.\n15 cars were taken to both garages for separate estimates of repair costs.\n\n\nlibrary(tidyverse)\ngarage &lt;- tibble(g1 = c(17.6, 20.2, 19.5, 11.3, 13.0, \n                        16.3, 15.3, 16.2, 12.2, 14.8,\n                        21.3, 22.1, 16.9, 17.6, 18.4), \n                 g2 = c(17.3, 19.1, 18.4, 11.5, 12.7, \n                        15.8, 14.9, 15.3, 12.0, 14.2, \n                        21.0, 21.0, 16.1, 16.7, 17.5))\n\n\nConstruct the 95% confidence interval for the average difference between the two garages.\nRemember the R syntax:\n\n\nt.test(dataset_name$variable1_name,\n       dataset_name$variable2_name, \n       paired = TRUE, \n       conf.level = confidence_level)"
-  },
-  {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-the-difference-between-two-dependent-means-2",
-    "href": "files/lectures/W02-L2-dependent-t.html#confidence-interval-for-the-difference-between-two-dependent-means-2",
-    "title": "Dependent t-Tests",
-    "section": "Confidence Interval for the Difference Between Two Dependent Means",
-    "text": "Confidence Interval for the Difference Between Two Dependent Means\n\nt.test(garage$g1, \n       garage$g2, \n       paired = TRUE, \n       conf.level = 0.95)\n\n\n    Paired t-test\n\ndata:  garage$g1 and garage$g2\nt = 6.0234, df = 14, p-value = 3.126e-05\nalternative hypothesis: true mean difference is not equal to 0\n95 percent confidence interval:\n 0.3949412 0.8317254\nsample estimates:\nmean difference \n      0.6133333 \n\n\n\nThe 95% CI for \\mu_d, where d = x_{\\text{I}} - x_{\\text{II}} is (0.39, 0.83).\nFrom the problem statement:\n\nInsurance adjusters are concerned about the high estimates they are receiving for auto repairs from garage I compared to garage II.\n\nCan we say that estimates from garage I are higher than those from garage II?"
-  },
-  {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#ci-for-the-difference-between-two-dependent-means",
-    "href": "files/lectures/W02-L2-dependent-t.html#ci-for-the-difference-between-two-dependent-means",
-    "title": "Dependent t-Tests",
-    "section": "CI for the Difference Between Two Dependent Means",
-    "text": "CI for the Difference Between Two Dependent Means\n\n\n\n\n\\mathbf{(1-\\boldsymbol\\alpha)100\\%} confidence interval for \\mathbf{\\boldsymbol\\mu_d}\n\n\n \\bar{d} \\pm t_{\\alpha/2} \\frac{s_d}{\\sqrt{n}} \n\nwhere t_{\\alpha/2} has n-1 degrees of freedom.\nTo construct this interval, we require either:\n\nthe differences to be normally distributed or\nthe sample size is sufficiently large (n \\ge 30)\n\n\n\n\n\n\n\nR syntax:\n\n\nt.test(dataset_name$variable1_name,\n       dataset_name$variable2_name, \n       paired = TRUE, \n       conf.level = confidence_level)"
-  },
-  {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#ci-for-the-difference-between-two-dependent-means-1",
-    "href": "files/lectures/W02-L2-dependent-t.html#ci-for-the-difference-between-two-dependent-means-1",
-    "title": "Dependent t-Tests",
-    "section": "CI for the Difference Between Two Dependent Means",
-    "text": "CI for the Difference Between Two Dependent Means\n\nInsurance adjusters are concerned about the high estimates they are receiving for auto repairs from garage I compared to garage II.\n15 cars were taken to both garages for separate estimates of repair costs.\n\n\nlibrary(tidyverse)\ngarage &lt;- tibble(g1 = c(17.6, 20.2, 19.5, 11.3, 13.0, \n                        16.3, 15.3, 16.2, 12.2, 14.8,\n                        21.3, 22.1, 16.9, 17.6, 18.4), \n                 g2 = c(17.3, 19.1, 18.4, 11.5, 12.7, \n                        15.8, 14.9, 15.3, 12.0, 14.2, \n                        21.0, 21.0, 16.1, 16.7, 17.5))\n\n\nConstruct the 95% confidence interval for the average difference between the two garages.\nRemember the R syntax:\n\n\nt.test(dataset_name$variable1_name,\n       dataset_name$variable2_name, \n       paired = TRUE, \n       conf.level = confidence_level)"
-  },
-  {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#ci-for-the-difference-between-two-dependent-means-2",
-    "href": "files/lectures/W02-L2-dependent-t.html#ci-for-the-difference-between-two-dependent-means-2",
-    "title": "Dependent t-Tests",
-    "section": "CI for the Difference Between Two Dependent Means",
-    "text": "CI for the Difference Between Two Dependent Means\n\nt.test(garage$g1, \n       garage$g2, \n       paired = TRUE, \n       conf.level = 0.95)\n\n\n    Paired t-test\n\ndata:  garage$g1 and garage$g2\nt = 6.0234, df = 14, p-value = 3.126e-05\nalternative hypothesis: true mean difference is not equal to 0\n95 percent confidence interval:\n 0.3949412 0.8317254\nsample estimates:\nmean difference \n      0.6133333 \n\n\n\nThe 95% CI for \\mu_d, where d = x_{\\text{I}} - x_{\\text{II}} is (0.39, 0.83).\nFrom the problem statement:\n\nInsurance adjusters are concerned about the high estimates they are receiving for auto repairs from garage I compared to garage II.\n\nCan we say that estimates from garage I are higher than those from garage II?"
-  },
-  {
-    "objectID": "files/lectures/W02-L2-dependent-t.html#paired-t-test-for-two-dependent-means",
-    "href": "files/lectures/W02-L2-dependent-t.html#paired-t-test-for-two-dependent-means",
-    "title": "Dependent t-Tests",
-    "section": "Paired t-Test for Two Dependent Means",
-    "text": "Paired t-Test for Two Dependent Means\nHypotheses\n\nH_0: \\mu_d = \\mu_0 | H_0: \\mu_d \\le \\mu_0 | H_0: \\mu_d \\ge \\mu_0\nH_1: \\mu_d \\ne \\mu_0 | H_1: \\mu_d &gt; \\mu_0 | H_1: \\mu_d &lt; \\mu_0\n\nTest Statistic & p-Value\n\nt_0 = \\frac{\\bar{d}-\\mu_0}{\\frac{s_d}{\\sqrt{n}}}\np = 2 P[t \\ge |t_0|] | p = P[t \\ge |t_0|] | p = P[t \\le |t_0|]\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha.\n\nConclusion/Interpretation\n\n[Reject or fail to reject] H_0.\nThere [is or is not] sufficient evidence to suggest [alternative hypothesis in words]."
-  },
-  {
-    "objectID": "files/lectures/W04-L2-assumptions.html#introduction-assumptions",
-    "href": "files/lectures/W04-L2-assumptions.html#introduction-assumptions",
-    "title": "t-Test Assumptions",
-    "section": "Introduction: Assumptions",
-    "text": "Introduction: Assumptions\n\nWe have now learned one- and two-sample t-tests.\nRecall, when we have two samples, they can be independent samples or dependent samples.\n\nIndependent samples: two-sample t-test\nDependent samples: paired t-test (one-sample t-test on difference)\n\nToday we will discuss how to assess the assumptions on t-tests."
-  },
-  {
-    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-set-up",
-    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-set-up",
-    "title": "t-Test Assumptions",
-    "section": "Normality Assumption: Set Up",
-    "text": "Normality Assumption: Set Up\n\nAll t-tests assume approximate normality of the data.\n\nIn the case of one-sample t-tests, the measure of interest must somewhat follow a normal distribution.\nIn the case of two-sample t-tests, the measure of interest in each group must somewhat follow a normal distribution.\n\nNote that a paired t-test is technically a one-sample t-test, so we will examine normality of the difference."
-  },
-  {
-    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-set-up-1",
-    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-set-up-1",
-    "title": "t-Test Assumptions",
-    "section": "Normality Assumption: Set Up",
-    "text": "Normality Assumption: Set Up\n\nThere are formal tests for normality (see article here), however, we will not use them.\n\nTests for normality are not well-endorsed by statisticians.\n\nInstead, we will assess normality using a quantile-quantile (q-q) plot.\n\nThis is a scatterplot that will form a 45° line if the assumed distribution is correct.\nHere is more information about q-q plots.\n\nWe will create q-q plots for:\n\nThe measurements in the case of the one-sample t-test.\nThe measurements from each group in the case of the two-sample t-test.\nThe difference between the groups in the case of the paired t-test."
-  },
-  {
-    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-r-syntax",
-    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-r-syntax",
-    "title": "t-Test Assumptions",
-    "section": "Normality Assumption: R Syntax",
-    "text": "Normality Assumption: R Syntax\n\nWe will assess the normality assumption graphically using a q-q plot\nA package was written by a former student, classpackage.\n\nIf you are working on the server, the package is already installed.\nIf you are not working on the server, please ask me for the code needed to install."
-  },
-  {
-    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-independent-data---r-syntax",
-    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-independent-data---r-syntax",
-    "title": "t-Test Assumptions",
-    "section": "Normality Assumption: Independent Data - R Syntax",
-    "text": "Normality Assumption: Independent Data - R Syntax\n\nOnce installed, we call the package,\n\n\nlibrary(classpackage)\n\n\nWhile there are several functions in this package, we are currently interested in the independent_qq_plot() function.\n\n\ndataset_name %&gt;% independent_qq_plot(variable = \"continuous variable\",\n                                     grouping_variable = \"grouping variable\")\n\n\nThis will provide the the q-q plot for the two-sample t-test (i.e., for independent data)."
-  },
-  {
-    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-independent-data---example",
-    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-independent-data---example",
-    "title": "t-Test Assumptions",
-    "section": "Normality Assumption: Independent Data - Example",
-    "text": "Normality Assumption: Independent Data - Example\n\nRecall the penguin example for the two-sample t-test.\n\nIs the body mass different for males and females?\n\n\n\npenguins &lt;- palmerpenguins::penguins\nhead(penguins, n=3)\n\n\n  \n\n\n\n\nRequesting the q-q plot,\n\n\npenguins %&gt;% independent_qq_plot(variable = \"body_mass_g\",\n                                 grouping_variable = \"sex\")"
-  },
-  {
-    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-dependent-data---r-syntax",
-    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-dependent-data---r-syntax",
-    "title": "t-Test Assumptions",
-    "section": "Normality Assumption: Dependent Data - R Syntax",
-    "text": "Normality Assumption: Dependent Data - R Syntax\n\nWhile there are several functions in the classpackage package, we are now interested in the dependent_qq_plot() function.\n\n\nwide_data %&gt;% dependent_qq_plot(variable = \"Display Name of Continuous Variable\",\n                                grouping_variable = \" \", # do not edit this line\n                                first_group = \"first_variable\", # first column for comparison\n                                second_group = \"second_variable\") # second column for comparison\n\n\nThis will provide the the q-q plot for the paired t-test (i.e., for dependent data)."
-  },
-  {
-    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-repair-estimates",
-    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-repair-estimates",
-    "title": "t-Test Assumptions",
-    "section": "Normality Assumption: Repair Estimates",
-    "text": "Normality Assumption: Repair Estimates\n\nRecall the repair estimate example for the dependent t-test.\n\n\ngarage &lt;- tibble(g1 = c(17.6, 20.2, 19.5, 11.3, 13.0, \n                        16.3, 15.3, 16.2, 12.2, 14.8,\n                        21.3, 22.1, 16.9, 17.6, 18.4), \n                 g2 = c(17.3, 19.1, 18.4, 11.5, 12.7, \n                        15.8, 14.9, 15.3, 12.0, 14.2, \n                        21.0, 21.0, 16.1, 16.7, 17.5))\n\n\nRequesting the q-q plot,\n\n\ngarage %&gt;% dependent_qq_plot(variable = \"estimate\",\n                             grouping_variable = \"garage\",\n                             first_group = \"g1\",\n                             second_group = \"g2\")"
-  },
-  {
-    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-repair-estimates-1",
-    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-repair-estimates-1",
-    "title": "t-Test Assumptions",
-    "section": "Normality Assumption: Repair Estimates",
-    "text": "Normality Assumption: Repair Estimates"
-  },
-  {
-    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-wrap-up",
-    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-wrap-up",
-    "title": "t-Test Assumptions",
-    "section": "Normality Assumption: Wrap Up",
-    "text": "Normality Assumption: Wrap Up\n\nImportant note!!\n\nI do not expect you to agree with my assessment of q-q plots!\nWhat I do expect is that you know what to do after making your assessment.\n\nNext up:\n\nWhat happens if we do not meet the assumption for a t-test….?"
-  },
-  {
-    "objectID": "files/lectures/W04-L2-assumptions.html#normality-assumption-independent-data---example-1",
-    "href": "files/lectures/W04-L2-assumptions.html#normality-assumption-independent-data---example-1",
-    "title": "t-Test Assumptions",
-    "section": "Normality Assumption: Independent Data - Example",
-    "text": "Normality Assumption: Independent Data - Example"
-  },
-  {
-    "objectID": "files/lectures/W04-L2-assumptions.html#wrap-up",
-    "href": "files/lectures/W04-L2-assumptions.html#wrap-up",
-    "title": "t-Test Assumptions",
-    "section": "Wrap Up",
-    "text": "Wrap Up\n\nImportant note!!\n\nI do not expect you to agree with my assessment of q-q plots!\nWhat I do expect is that you know what to do after making your assessment.\n\nNext up:\n\nWhat happens if we do not meet the assumption for a t-test….?"
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#introduction",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#introduction",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Introduction",
-    "text": "Introduction\n\nWe last discussed assumptions on t-tests\n\nDependent / paired t-test: normality\nIndependent two-sample t-test: normality and variance\n\nIf we break the normality assumption, we must look to nonparametric methods."
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#introduction-1",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#introduction-1",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Introduction",
-    "text": "Introduction\n\nThe t-tests we have already learned are considered parametric methods.\n\nThere is a distributional assumption on the test.\n\nNonparametric methods do not have distributional assumptions.\n\nWe typically transform the data to their ranks and then perform calculations.\n\nWhy don’t we always use nonparametric methods?\n\nThey are often less efficient: a larger sample size is required to achieve the same probability of a Type I error.\nThey discard useful information :("
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#ranking-data",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#ranking-data",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Ranking Data",
-    "text": "Ranking Data\n\nIn the nonparametric tests we will be learning, the data will be ranked.\nLet us first consider a simple example, x: \\ 1, 7, 10, 2, 6, 8\nOur first step is to reorder the data:x: \\ 1, 2, 6, 7, 8, 10\nThen, we replace with the ranks:R: \\ 1, 2, 3, 4, 5, 6"
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#ranking-data-1",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#ranking-data-1",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Ranking Data",
-    "text": "Ranking Data\n\nWhat if all data values are not unique?\n\nWe will assign the average ranks.\n\nFor example, x: \\ 9, 8, 8, 0, 3, 4, 4, 8\nLet’s reorder:x: \\ 0, 3, 4, 4, 8, 8, 8, 9\nRank ignoring ties:R: \\ 1, 2, 3, 4, 5, 6, 7, 8\nNow, the final rank:R: \\ 1, 2, 3.5, 3.5, 6, 6, 6, 8"
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Rank Sum",
-    "text": "Wilcoxon Rank Sum\nHypotheses\n\nH_0: M_1 - M_2 = M_0 | H_0: M_1 - M_2 \\le M_0 | H_0: M_1 - M_2 \\ge M_0\nH_1: M_1 - M_2 \\ne M_0 | H_1: M_1 - M_2 &gt; M_0 | H_1: M_1 - M_2 &lt; M_0\n\nTest Statistic & p-Value\n\nT = \\sum R_{\\text{sample 1}} - \\frac{n_1(n_1+1)}{2}\np = (calculated by R :))\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha.\n\nConclusion/Interpretation\n\n[Reject or fail to reject] H_0.\nThere [is or is not] sufficient evidence to suggest [alternative hypothesis in words]."
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Rank Sum / Mann-Whitney U",
-    "text": "Wilcoxon Rank Sum / Mann-Whitney U\n\nWe will use the wilcox.test() function to perform the test,\n\n\nwilcox.test(continuous_variable ~ grouping_variable,\n            data = dataset_name,\n            alternative = \"[greater, less, or two]\",\n            mu = numeric_hypothesized_value,\n            exact = FALSE)\n\n\nLike before, R will use the group that is “first” in the grouping variable.\n\n“First” is in terms of numeric or alphabetical."
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-1",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-1",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Rank Sum / Mann-Whitney U",
-    "text": "Wilcoxon Rank Sum / Mann-Whitney U\n\nWhen exposed to an infection, a person typically develops antibodies. The extent to which the antibodies respond can be measured by looking at a person’s titer, which is a measure of the number of antibodies present. The higher the titer is, the more antibodies that are present.\nThe following data represent the titers of 11 ill people and 11 healthy people exposed to the tularemia virus in Vermont.\nIs the level of titer in the ill group greater than the level of titer in the healthy group? Use the \\alpha = 0.1 level of significance.\n\n\nill &lt;- c(640, 160, 1280, 320, 80, 640, 640, 160, 1280, 640, 160)\nhealthy &lt;- c(10, 320, 160, 160, 320, 320, 10, 320, 320, 80, 640)"
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-2",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-2",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Rank Sum / Mann-Whitney U",
-    "text": "Wilcoxon Rank Sum / Mann-Whitney U\n\nIs this independent or dependent data?\nFrom the problem statement: The following data represent the titers of 11 ill people and 11 healthy people exposed to the tularemia virus in Vermont."
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-3",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-3",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Rank Sum / Mann-Whitney U",
-    "text": "Wilcoxon Rank Sum / Mann-Whitney U\n\nIs this independent or dependent data?\nFrom the problem statement: The following data represent the titers of 11 ill people and 11 healthy people exposed to the tularemia virus in Vermont.\n\nThere were 22 people in the study - those that are ill are not in the healthy group."
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-4",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-4",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Rank Sum / Mann-Whitney U",
-    "text": "Wilcoxon Rank Sum / Mann-Whitney U\n\nLet’s first look at the q-q plot,\n\n\nDataQ-Q Plot CodeQ-Q Plot Results\n\n\n\noutcome &lt;- c(640, 160, 1280, 320, 80, 640, 640, 160, 1280, 640, 160,\n             10, 320, 160, 160, 320, 320, 10, 320, 320, 80, 640)\ngroup &lt;- c(rep(\"ill\",11), rep(\"healthy\",11))\nlong_data &lt;- tibble(outcome, group)\n\nError in tibble(outcome, group): could not find function \"tibble\"\n\n\n\n\n\nlong_data %&gt;% independent_qq_plot(variable = \"outcome\",\n                                  grouping_variable = \"group\")\n\n\n\n\n\n\nError in long_data %&gt;% independent_qq_plot(variable = \"outcome\", grouping_variable = \"group\"): could not find function \"%&gt;%\""
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-5",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-5",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Rank Sum / Mann-Whitney U",
-    "text": "Wilcoxon Rank Sum / Mann-Whitney U\n\nIs the level of titer in the ill group greater than the level of titer in the healthy group?\n\n\nwilcox.test(outcome ~ group, \n            data = long_data,\n            exact = FALSE, \n            alternative=\"less\")\n\nError in eval(m$data, parent.frame()): object 'long_data' not found"
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-6",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-6",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Rank Sum / Mann-Whitney U",
-    "text": "Wilcoxon Rank Sum / Mann-Whitney U\n\nHypotheses\n\nH_0: \\ M_{\\text{ill}} \\le M_{\\text{healthy}}\nH_1: \\ M_{\\text{ill}} &gt; M_{\\text{healthy}}\n\nTest Statistic and p-Value\n\nW_0 = 35\np = 0.047\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha; \\alpha = 0.10.\n\nConclusion/Interpretation\n\nReject H_0.\nThere is sufficient evidence to suggest that the level of titer in the ill group is greater than the level of titer in the healthy group."
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-7",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-7",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Rank Sum / Mann-Whitney U",
-    "text": "Wilcoxon Rank Sum / Mann-Whitney U\n\nRecall the tapeworm in sheep example from the two-sample t-test lecture.\n\nA random sample of 24 worm-infested lambs of approximately the same age and health was randomly divided into two groups.\nTwelve of the lambs were injected with medication and the remaining 12 were left untreated.\n\n\n\nDataQ-Q Plot CodeQ-Q Plot Results\n\n\n\nworms &lt;- c(18, 43, 28, 50, 16, 32, 13, 35, 38, 33,  6,  7,\n           40, 54, 26, 63, 21, 37, 39, 23, 48, 58, 28, 39)\ntrt &lt;- c(rep(\"Treated\", 12), rep(\"Not\", 12))\nsheep &lt;- tibble(worms, trt)\n\nError in tibble(worms, trt): could not find function \"tibble\"\n\n\n\n\n\nsheep %&gt;% independent_qq_plot(variable = \"worms\",\n                              grouping_variable = \"trt\")\n\n\n\n\n\n\nError in sheep %&gt;% independent_qq_plot(variable = \"worms\", grouping_variable = \"trt\"): could not find function \"%&gt;%\""
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-8",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-8",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Rank Sum / Mann-Whitney U",
-    "text": "Wilcoxon Rank Sum / Mann-Whitney U\n\nSince we are applying a nonparametric test, we will describe the data using median and IQR.\n\n\nsheep %&gt;% \n  group_by(trt) %&gt;%\n  summarize(median(worms), IQR(worms))\n\nError in sheep %&gt;% group_by(trt) %&gt;% summarize(median(worms), IQR(worms)): could not find function \"%&gt;%\"\n\n\n\nThere is a median of 30 worms in the treated lambs (IQR = 20.5) and a median of 39 worms in the untreated lambs (IQR = 22.0)."
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-9",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-9",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Rank Sum / Mann-Whitney U",
-    "text": "Wilcoxon Rank Sum / Mann-Whitney U\n\nIs there significant evidence that the untreated lambs have a mean tapeworm count that is more than five units greater than the mean count for the treated lambs? Use \\alpha = 0.10.\n\n\nwilcox.test(worms ~ trt, \n            data = sheep,\n            exact = FALSE, \n            alternative=\"greater\",\n            mu = 5)\n\nError in eval(m$data, parent.frame()): object 'sheep' not found"
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-10",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-mann-whitney-u-10",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Rank Sum / Mann-Whitney U",
-    "text": "Wilcoxon Rank Sum / Mann-Whitney U\n\nHypotheses\n\nH_0: \\ M_{\\text{untreated}} - M_{\\text{treated}} \\le 5\nH_1: \\ M_{\\text{untreated}} - M_{\\text{treated}} &gt; 5\n\nTest Statistic and p-Value\n\nW_0 = 94.5\np = 0.102\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha; \\alpha = 0.10.\n\nConclusion/Interpretation\n\nFail to reject H_0.\nThere is not sufficient evidence to suggest that untreated lambs have a mean tapeworm count that is more than five units greater than the mean count for the treated lambs."
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#introduction-wilcoxon-signed-rank",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#introduction-wilcoxon-signed-rank",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Introduction: Wilcoxon Signed Rank",
-    "text": "Introduction: Wilcoxon Signed Rank\n\nToday we have discussed that we turn to nonparametric tests when we do not meet distributional assumptions for t-tests.\nIf we do not meet the normality assumption for the paired t-test,\nNow we will learn the Wilcoxon signed rank, the nonparametric alternative to the dependent t-test.\nLike in the dependent t-test, we will analyze the difference between two values.\nLike in the Wilcoxon rank sum, we will be analyzing ranks."
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nBefore ranking, we will find the difference between the paired observations and eliminate any 0 differences.\n\nNote 1: elimniating 0 differences is the big difference between the other tests!\nNote 2: because we are eliminating 0 differences, this means that our sample size will update to the number of pairs with a non-0 difference.\n\nWhen ranking, we the differences are ranked based on the absolute value of the difference.\nWe also keep the sign of the difference.\n\nWe will have positive ranks and negative ranks.\n\n\n\n\n\nX\nY\nD\n|D|\nRank\n\n\n\n\n5\n8\n-3\n3\n- 1.5\n\n\n8\n5\n3\n3\n+ 1.5\n\n\n4\n4\n0\n0\n———"
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-1",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-1",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\n\n\n\nwhere\n\nT_+ is the sum of the positive ranks,\nT_- is the sum of the negative ranks"
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-2",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-2",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nWe will again use the wilcox.test() function to perform the test,\n\n\nwilcox.test(var1, var2,\n       data = dataset_name,\n       alternative = \"[greater, less, or two]\",\n       mu = numeric_hypothesized_value,\n       paired = TRUE,\n       exact = FALSE)"
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-3",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-3",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nA stock analyst believes the median number of shares traded in Walgreens Boots Alliance (WBA) stock is greater than that in McDonald’s (MCD). Test the analyst’s belief at the \\alpha=0.05 level of significance.\n\n\nDataQ-Q Plot CodeQ-Q Plot Results\n\n\n\nWBA &lt;- c(8.9, 6.3, 6.2, 7.2, 2.8, 3.3, 23.6, 6.0, 15.6, 5.2, 6.3, 10.1, 4.0, 8.4)\nMCD &lt;- c(8.5, 7.6, 8.3, 10.4, 2.5, 2.6, 3.5, 4.7, 9.0, 6.0, 5.6, 5.0, 4.4, 5.6)\nstocks &lt;- tibble(WBA, MCD) \n\nError in tibble(WBA, MCD): could not find function \"tibble\"\n\n\n\n\n\nstocks %&gt;% dependent_qq_plot(variable = \"Median Number of Trades\",\n                                grouping_variable = \" \",\n                                first_group = \"WBA\",\n                                second_group = \"MCD\")\n\n\n\n\n\n\nError in stocks %&gt;% dependent_qq_plot(variable = \"Median Number of Trades\", : could not find function \"%&gt;%\""
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-4",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-4",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nLet’s also look at summary statistics,\n\n\nstocks %&gt;% summarize(median(WBA), median(MCD), median(WBA-MCD))\n\nError in stocks %&gt;% summarize(median(WBA), median(MCD), median(WBA - MCD)): could not find function \"%&gt;%\"\n\nstocks %&gt;% summarize(IQR(WBA), IQR(MCD), IQR(WBA-MCD))\n\nError in stocks %&gt;% summarize(IQR(WBA), IQR(MCD), IQR(WBA - MCD)): could not find function \"%&gt;%\"\n\n\n\nThe median for the WBA stock is 6.3 (IQR 3.375) while the median for MCD stock is 5.6 (IQR 3.65).\nThe median for the difference between WBA and MCD is 0.55 (IQR 3.125)."
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-5",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-5",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nLet’s now perform the hypothesis test,\n\nFrom the problem statement: A stock analyst believes the median number of shares traded in Walgreens Boots Alliance (WBA) stock is greater than that in McDonald’s (MCD).\n\n\n\nwilcox.test(WBA, MCD,\n       data = stocks,\n       alternative = \"greater\",\n       paired = TRUE, \n       exact = FALSE)\n\n\n    Wilcoxon signed rank test with continuity correction\n\ndata:  WBA and MCD\nV = 69, p-value = 0.1575\nalternative hypothesis: true location shift is greater than 0"
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-6",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-6",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nHypotheses\n\nH_0: \\ M_{\\text{WBA}} \\le M_{\\text{MCD}} OR M_d \\le 0, where d = \\text{WBA} - \\text{MCD}\nH_1: \\ M_{\\text{WBA}} &gt; M_{\\text{MCD}} OR M_d &gt; 0\n\nTest Statistic and p-Value\n\nV_0 = 69\np = 0.158\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha; \\alpha = 0.05.\n\nConclusion/Interpretation\n\nFail to reject H_0.\nThere is not sufficient evidence to suggest that the median stock shares traded is greater for WBA than for MCD."
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-7",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-7",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nRecall the insurance data we examined with the paired t-test.\n\nInsurance adjusters are concerned about the high estimates they are receiving for auto repairs from garage I compared to garage II.\n\n\n\nDataQ-Q Plot CodeQ-Q Plot Results\n\n\n\ng1 &lt;- c(17.6, 20.2, 19.5, 11.3, 13.0, 16.3, 15.3, 16.2, 12.2, 14.8, 21.3, 22.1, 16.9, 17.6, 18.4)\ng2 &lt;- c(17.3, 19.1, 18.4, 11.5, 12.7, 15.8, 14.9, 15.3, 12.0, 14.2, 21.0, 21.0, 16.1, 16.7, 17.5)\ngarage &lt;- tibble(g1, g2) \n\nError in tibble(g1, g2): could not find function \"tibble\"\n\n\n\n\n\ngarage %&gt;% dependent_qq_plot(variable = \"Repair Estimate\",\n                                grouping_variable = \" \",\n                                first_group = \"g1\",\n                                second_group = \"g2\")\n\n\n\n\n\n\nError in garage %&gt;% dependent_qq_plot(variable = \"Repair Estimate\", grouping_variable = \" \", : could not find function \"%&gt;%\""
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-8",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-8",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nLooking at summaries,\n\n\ngarage %&gt;% summarize(median(g1), median(g2), median(g1-g2))\n\nError in garage %&gt;% summarize(median(g1), median(g2), median(g1 - g2)): could not find function \"%&gt;%\"\n\ngarage %&gt;% summarize(IQR(g1), IQR(g2), IQR(g1-g2))\n\nError in garage %&gt;% summarize(IQR(g1), IQR(g2), IQR(g1 - g2)): could not find function \"%&gt;%\"\n\n\n\nThe median estimate for garage 1 is $169 (IQR $39), while the median estimate for garage 2 is $161 (IQR $34).\nThe median difference between garage 1 and garage 2 is $6 (IQR $\\6)."
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-9",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-9",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nwilcox.test(g1, g2,\n       data = garage,\n       alternative = \"greater\",\n       paired = TRUE, \n       exact = FALSE)"
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-10",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-signed-rank-10",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nHypotheses\n\nH_0: \\ M_{\\text{I}} \\le M_{\\text{II}} OR M_d \\le 0, where d = \\text{I} - \\text{II}\nH_1: \\ M_{\\text{I}} &gt; M_{\\text{II}} OR M_d &gt; 0\n\nTest Statistic and p-Value\n\nT = 118.5\np &lt; 0.001\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha; \\alpha = 0.05.\n\nConclusion/Interpretation\n\nReject H_0.\nThere is sufficient evidence to suggest that the median repair estimate from garage I is higher than that of garage II."
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-1",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-1",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Rank Sum",
-    "text": "Wilcoxon Rank Sum\n\nWe will use the wilcox.test() function to perform the test,\n\n\nwilcox.test(continuous_variable ~ grouping_variable,\n            data = dataset_name,\n            alternative = \"alternative\",\n            mu = hypothesized_value,\n            exact = FALSE)\n\n\nLike before, R will use the group that is “first” in the grouping variable.\n\n“First” is in terms of numeric or alphabetical."
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-2",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-2",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Rank Sum",
-    "text": "Wilcoxon Rank Sum\n\nWhen exposed to an infection, a person typically develops antibodies. The extent to which the antibodies respond can be measured by looking at a person’s titer, which is a measure of the number of antibodies present. The higher the titer is, the more antibodies that are present.\nThe following data represent the titers of 11 ill people and 11 healthy people exposed to the tularemia virus in Vermont.\nIs the level of titer in the ill group greater than the level of titer in the healthy group? Use the \\alpha = 0.10 level of significance.\n\n\ntiter_levels &lt;- tibble(level = c(640, 160, 1280, 320, 80, 640, 640, 160, 1280, 640, 160, \n                                  10, 320, 160, 160, 320, 320, 10, 320, 320, 80, 640),\n                       group = c(rep(\"ill\",11), rep(\"healthy\",11)))\n\n\nRecall the R syntax,\n\n\nwilcox.test(continuous_variable ~ grouping_variable,\n            data = dataset_name,\n            alternative = \"alternative\",\n            mu = hypothesized_value,\n            exact = FALSE)"
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-3",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-3",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Rank Sum",
-    "text": "Wilcoxon Rank Sum\n\nIs the level of titer in the ill group greater than the level of titer in the healthy group?\n\n\nwilcox.test(level ~ group, \n            data = titer_levels,\n            alternative = \"less\",\n            exact = FALSE)\n\n\n    Wilcoxon rank sum test with continuity correction\n\ndata:  level by group\nW = 35, p-value = 0.04657\nalternative hypothesis: true location shift is less than 0"
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-4",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wilcoxon-rank-sum-4",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wilcoxon Rank Sum",
-    "text": "Wilcoxon Rank Sum\nHypotheses\n\nH_0: \\ M_{\\text{ill}} \\le M_{\\text{healthy}}\nH_1: \\ M_{\\text{ill}} &gt; M_{\\text{healthy}}\n\nTest Statistic and p-Value\n\nW_0 = 35\np = 0.047\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha; \\alpha = 0.10.\n\nConclusion/Interpretation\n\nReject H_0.\nThere is sufficient evidence to suggest that the level of titer in the ill group is greater than the level of titer in the healthy group."
-  },
-  {
-    "objectID": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wrap-up",
-    "href": "files/lectures/W04-L3-Wilcoxon-rank-sum.html#wrap-up",
-    "title": "Wilcoxon Rank Sum",
-    "section": "Wrap Up",
-    "text": "Wrap Up\n\nToday we reviewed the Wilcoxon rank sum test.\n\nNonparametric alternative to the two-sample t-test.\n\nNext lecture:\n\nWilcoxon signed rank"
-  },
-  {
-    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#introduction",
-    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#introduction",
-    "title": "Wilcoxon Signed Rank",
-    "section": "Introduction",
-    "text": "Introduction\n\nToday we have discussed that we turn to nonparametric tests when we do not meet distributional assumptions for t-tests.\nIf we do not meet the normality assumption for the paired t-test, we turn to the Wilcoxon signed rank.\nLike in the dependent t-test, we will analyze the difference between two values.\nLike in the Wilcoxon rank sum, we will be analyzing ranks."
-  },
-  {
-    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank",
-    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank",
-    "title": "Wilcoxon Signed Rank",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nBefore ranking, we will find the difference between the paired observations and eliminate any 0 differences.\n\nNote 1: elimniating 0 differences is the big difference between the other tests!\nNote 2: because we are eliminating 0 differences, this means that our sample size will update to the number of pairs with a non-0 difference.\n\nWhen ranking, we the differences are ranked based on the absolute value of the difference.\nWe also keep the sign of the difference.\n\nWe will have positive ranks and negative ranks.\n\n\n\n\n\nX\nY\nD\n|D|\nRank\n\n\n\n\n5\n8\n-3\n3\n- 1.5\n\n\n8\n5\n3\n3\n+ 1.5\n\n\n4\n4\n0\n0\n———"
-  },
-  {
-    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-1",
-    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-1",
-    "title": "Wilcoxon Signed Rank",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\nHypotheses\n\nH_0: M_d = M_0 | H_0: M_d \\le M_0 | H_0: M_d \\ge M_0\nH_1: M_d \\ne M_0 | H_1: M_d &gt; M_0 | H_1: M_d &lt; M_0\n\nTest Statistic & p-Value\n\nT_0 = \\min(T+,|T_-|) if two-tailed, T_0 = T_+ if left-tailed, and T_0 = |T_-| if right-tailed.\np = (calculated by R :))\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha.\n\nConclusion/Interpretation\n\n[Reject or fail to reject] H_0.\nThere [is or is not] sufficient evidence to suggest [alternative hypothesis in words]."
-  },
-  {
-    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-2",
-    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-2",
-    "title": "Wilcoxon Signed Rank",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nWe will again use the wilcox.test() function to perform the test,\n\n\nwilcox.test(dataset$variable1, dataset$variable2,\n       alternative = \"alternative\",\n       mu = hypothesized_value,\n       paired = TRUE,\n       exact = FALSE)"
-  },
-  {
-    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-3",
-    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-3",
-    "title": "Wilcoxon Signed Rank",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nA stock analyst believes the median number of shares traded in Walgreens Boots Alliance (WBA) stock is greater than that in McDonald’s (MCD). Test the analyst’s belief at the \\alpha=0.05 level of significance.\n\n\nstocks &lt;- tibble(WBA = c(8.9, 6.3, 6.2, 7.2, 2.8, 3.3, 23.6, \n                         6.0, 15.6, 5.2, 6.3, 10.1, 4.0, 8.4),\n                 MCD = c(8.5, 7.6, 8.3, 10.4, 2.5, 2.6, 3.5, \n                         4.7, 9.0, 6.0, 5.6, 5.0, 4.4, 5.6))\n\n\nRecall the R syntax,\n\n\nwilcox.test(dataset$variable1, dataset$variable2,\n       alternative = \"alternative\",\n       mu = hypothesized_value,\n       paired = TRUE,\n       exact = FALSE)"
-  },
-  {
-    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-4",
-    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-4",
-    "title": "Wilcoxon Signed Rank",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nFrom the problem statement: A stock analyst believes the median number of shares traded in Walgreens Boots Alliance (WBA) stock is greater than that in McDonald’s (MCD).\n\n\nwilcox.test(stocks$WBA, stocks$MCD,\n       alternative = \"greater\",\n       paired = TRUE, \n       exact = FALSE)\n\n\n    Wilcoxon signed rank test with continuity correction\n\ndata:  stocks$WBA and stocks$MCD\nV = 69, p-value = 0.1575\nalternative hypothesis: true location shift is greater than 0"
-  },
-  {
-    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-5",
-    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-5",
-    "title": "Wilcoxon Signed Rank",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nHypotheses\n\nH_0: \\ M_{\\text{WBA}} \\le M_{\\text{MCD}} OR M_d \\le 0, where d = \\text{WBA} - \\text{MCD}\nH_1: \\ M_{\\text{WBA}} &gt; M_{\\text{MCD}} OR M_d &gt; 0\n\nTest Statistic and p-Value\n\nV_0 = 69\np = 0.158\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha; \\alpha = 0.05.\n\nConclusion/Interpretation\n\nFail to reject H_0.\nThere is not sufficient evidence to suggest that the median stock shares traded is greater for WBA than for MCD."
-  },
-  {
-    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-6",
-    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-6",
-    "title": "Wilcoxon Signed Rank",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nRecall the insurance data we examined with the paired t-test.\n\nInsurance adjusters are concerned about the high estimates they are receiving for auto repairs from garage I compared to garage II.\n\n\n\nDataQ-Q Plot CodeQ-Q Plot Results\n\n\n\ng1 &lt;- c(17.6, 20.2, 19.5, 11.3, 13.0, 16.3, 15.3, 16.2, 12.2, 14.8, 21.3, 22.1, 16.9, 17.6, 18.4)\ng2 &lt;- c(17.3, 19.1, 18.4, 11.5, 12.7, 15.8, 14.9, 15.3, 12.0, 14.2, 21.0, 21.0, 16.1, 16.7, 17.5)\ngarage &lt;- tibble(g1, g2) \n\n\n\n\ngarage %&gt;% dependent_qq_plot(variable = \"Repair Estimate\",\n                                grouping_variable = \" \",\n                                first_group = \"g1\",\n                                second_group = \"g2\")\n\n\n\n\n\n\nError in dependent_qq_plot(., variable = \"Repair Estimate\", grouping_variable = \" \", : could not find function \"dependent_qq_plot\""
-  },
-  {
-    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-7",
-    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-7",
-    "title": "Wilcoxon Signed Rank",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nLooking at summaries,\n\n\ngarage %&gt;% summarize(median(g1), median(g2), median(g1-g2))\n\n\n  \n\n\ngarage %&gt;% summarize(IQR(g1), IQR(g2), IQR(g1-g2))\n\n\n  \n\n\n\n\nThe median estimate for garage 1 is $169 (IQR $39), while the median estimate for garage 2 is $161 (IQR $34).\nThe median difference between garage 1 and garage 2 is $6 (IQR $\\6)."
-  },
-  {
-    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-8",
-    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-8",
-    "title": "Wilcoxon Signed Rank",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nwilcox.test(g1, g2,\n       data = garage,\n       alternative = \"greater\",\n       paired = TRUE, \n       exact = FALSE)"
-  },
-  {
-    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-9",
-    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-9",
-    "title": "Wilcoxon Signed Rank",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nHypotheses\n\nH_0: \\ M_{\\text{I}} \\le M_{\\text{II}} OR M_d \\le 0, where d = \\text{I} - \\text{II}\nH_1: \\ M_{\\text{I}} &gt; M_{\\text{II}} OR M_d &gt; 0\n\nTest Statistic and p-Value\n\nT = 118.5\np &lt; 0.001\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha; \\alpha = 0.05.\n\nConclusion/Interpretation\n\nReject H_0.\nThere is sufficient evidence to suggest that the median repair estimate from garage I is higher than that of garage II."
-  },
-  {
-    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-10",
-    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wilcoxon-signed-rank-10",
-    "title": "Wilcoxon Signed Rank",
-    "section": "Wilcoxon Signed Rank",
-    "text": "Wilcoxon Signed Rank\n\nHypotheses\n\nH_0: \\ M_{\\text{I}} \\le M_{\\text{II}} OR M_d \\le 0, where d = \\text{I} - \\text{II}\nH_1: \\ M_{\\text{I}} &gt; M_{\\text{II}} OR M_d &gt; 0\n\nTest Statistic and p-Value\n\nT = 118.5\np &lt; 0.001\n\nRejection Region\n\nReject H_0 if p &lt; \\alpha; \\alpha = 0.05.\n\nConclusion/Interpretation\n\nReject H_0.\nThere is sufficient evidence to suggest that the median repair estimate from garage I is higher than that of garage II."
-  },
-  {
-    "objectID": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wrap-up",
-    "href": "files/lectures/W04-L4-Wilcoxon-signed-rank.html#wrap-up",
-    "title": "Wilcoxon Signed Rank",
-    "section": "Wrap Up",
-    "text": "Wrap Up\n\nToday we reviewed the Wilcoxon signed rank test.\n\nNonparametric alternative to the paired t-test.\n\nThis completes Module 1.\nNext: comparing three or more groups."
-  },
-  {
-    "objectID": "files/assignments/Assignment1.html",
-    "href": "files/assignments/Assignment1.html",
-    "title": "Assignment 1 - Spring 2025",
-    "section": "",
-    "text": "1. Describe the data by completing the following table:\n\n\n\n\n\n\n\n\n\n\n\n2000\n2015\n\n\n\n\nSouth\nMean (Standard Deviation)\nINSERT FOR 2000\nINSERT FOR 2015\n\n\nWest\nMean (Standard Deviation)\nINSERT FOR 2000\nINSERT FOR 2015\n\n\n\n\n\ndata %&gt;% # pipe in data\n  group_by(Region) %&gt;% # tell R we want this by \"Region\"\n  summarize(mean00 = mean(y2000), # request mean for 2000\n            sd00 = sd(y2000)) # request standard deviation for 2000\n\n# A tibble: 4 × 3\n  Region     mean00    sd00\n  &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;\n1 Midwest   204973. 184965.\n2 Northeast 225918. 308950.\n3 South     132076. 109495.\n4 West      153955. 255145.\n\n\n2. Construct side-by-side boxplots comparing the West and Midwest regions for 2000 and 2015.\n\n\n\nbp00 &lt;- data_south_west %&gt;%\n  ggplot(aes(y= y2000, x=Region, fill=Region)) +\n          geom_boxplot() +\n          theme_minimal() +\n          labs(y = \"Spending\", x = \"Region\") +\n          ylim(min=0, max=1400000) +\n          ggtitle(\"2000\")\n\n# ggarrange(bp00, bp15, ncol=2)\n\n3. Describe the distributions. Are they skewed? Do you think there’s a difference between the two regions?\n4. Use the appropriate t-test to determine if there is a difference in library spending between the South and West regions in 2000. Test at the \\(\\alpha=0.05\\) level. Remember to typeset the results.\n5. Graphically assess the normality assumption associated with the t-test in Q4. Remember to state whether or not the assumption is broken.\n6. Use the appropriate nonparametric test to determine if there is a difference in library spending between the South and West regions in 2000. Test at the \\(\\alpha=0.05\\) level. Remember to typeset the results.\n7. Based on your answer to Q5, which test should be reported? Explain why you’re choosing the test you’re choosing. (Hint: you will either choose the t-test or the nonparametric test.)\n8. Use the appropriate t-test to determine if there is a difference in library spending between 2000 and 2015 for all states. Test at the \\(\\alpha=0.05\\) level. Remember to typeset the results.\n9. Assess the normality assumption associated with the t-test in Q8. Remember to state whether or not the assumption is broken.\n10. Use the appropriate nonparametric test to determine if there is a difference in library spending between 2000 and 2015 for all states. Test at the \\(\\alpha=0.05\\) level. Remember to typeset the results.\n11. Based on your answer to Q9, which test should be reported? Explain why you’re choosing the test you’re choosing. (Hint: you will either choose the t-test or the nonparametric test.)"
-  },
-  {
-    "objectID": "files/lectures/test.html",
-    "href": "files/lectures/test.html",
-    "title": "Lecture Title",
-    "section": "",
-    "text": "To emphasize specific words or text, you can:\n\nUse the default .alert class, e.g. important note.\nUse the default .example class e.g. For example, look at this text\n\n\n\n\n\n\n\n\nUse inline color and bg attribute for custom color and background color,\n\n[colored text]{color=\"#2a74f5\"} produce colored text\n[text with background color]{bg=\"#f5e347\"} produce text with background color\n[colored text with background]{color=\"#2a74f5\" bg=\"#f5e347\"} produce colored text\n\nNote that, when using inline attributes, DO NOT PUT SPACE on either side of equal (=) sign, that, write like color=\"#2a74f5\", instead of color = \"#2a74f5\"\n\n\n\n\n\n\n\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel rhoncus ante. Donec vitae euismod nibh. In ultrices vestibulum erat, non maximus orci elementum in. Ut eget erat et felis consequat volutpat. Donec ac iaculis justo. Phasellus vitae mi tempor leo scelerisque consequat sed at nibh.\n\n\n\n\n\n\n\n\n@R-knitr\n@R-rmarkdown\n@R-quarto"
-  },
-  {
-    "objectID": "files/lectures/test.html#components-1",
-    "href": "files/lectures/test.html#components-1",
-    "title": "Lecture Title",
-    "section": "",
-    "text": "To emphasize specific words or text, you can:\n\nUse the default .alert class, e.g. important note.\nUse the default .example class e.g. For example, look at this text"
-  },
-  {
-    "objectID": "files/lectures/test.html#components-2",
-    "href": "files/lectures/test.html#components-2",
-    "title": "Lecture Title",
-    "section": "",
-    "text": "Use inline color and bg attribute for custom color and background color,\n\n[colored text]{color=\"#2a74f5\"} produce colored text\n[text with background color]{bg=\"#f5e347\"} produce text with background color\n[colored text with background]{color=\"#2a74f5\" bg=\"#f5e347\"} produce colored text\n\nNote that, when using inline attributes, DO NOT PUT SPACE on either side of equal (=) sign, that, write like color=\"#2a74f5\", instead of color = \"#2a74f5\""
-  },
-  {
-    "objectID": "files/lectures/test.html#components-3",
-    "href": "files/lectures/test.html#components-3",
-    "title": "Lecture Title",
-    "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel rhoncus ante. Donec vitae euismod nibh. In ultrices vestibulum erat, non maximus orci elementum in. Ut eget erat et felis consequat volutpat. Donec ac iaculis justo. Phasellus vitae mi tempor leo scelerisque consequat sed at nibh."
-  },
-  {
-    "objectID": "files/lectures/test.html#components-4",
-    "href": "files/lectures/test.html#components-4",
-    "title": "Lecture Title",
-    "section": "",
-    "text": "@R-knitr\n@R-rmarkdown\n@R-quarto"
-  },
-  {
-    "objectID": "files/lectures/test.html#custom-blocks",
-    "href": "files/lectures/test.html#custom-blocks",
-    "title": "Lecture Title",
-    "section": "Custom Blocks",
-    "text": "Custom Blocks\nThere are three custom blocks that you can use. Create them using .callout class in a div (:::) and specify the type.\n\nFor default block, use type='default'\nFor alert block, use type='alert'\nFor example block, use type='example'"
-  },
-  {
-    "objectID": "files/lectures/test.html#default-block",
-    "href": "files/lectures/test.html#default-block",
-    "title": "Lecture Title",
-    "section": "Default block",
-    "text": "Default block\n::: {.callout type='default'}\n## Default block\n\nThis is a default block\n:::\nrenders to,\n\n\n\n\n\n\nDefault block\n\n\n\nThis is a default block"
-  },
-  {
-    "objectID": "files/lectures/test.html#alert-block",
-    "href": "files/lectures/test.html#alert-block",
-    "title": "Lecture Title",
-    "section": "Alert Block",
-    "text": "Alert Block\n::: {.callout type='alert'}\n## Alert Block\n\nThis is a alert block\n:::\nrenders to,\n\n\n\n\n\n\nAlert Block\n\n\n\nThis is a alert block"
-  },
-  {
-    "objectID": "files/lectures/test.html#example-block",
-    "href": "files/lectures/test.html#example-block",
-    "title": "Lecture Title",
-    "section": "Example Block",
-    "text": "Example Block\n::: {.callout type='example'}\n## Example Block\n\nThis is a example block\n:::\nrenders to,\n\n\n\n\n\n\nExample Block\n\n\n\nThis is a example block"
-  },
-  {
-    "objectID": "files/lectures/test.html#tables",
-    "href": "files/lectures/test.html#tables",
-    "title": "Lecture Title",
-    "section": "Tables",
-    "text": "Tables\n\n\n\nTable 1: Fruit prices\n\n\n\n\n\n\n\n\n\nfruit\nprice\n\n\n\n\napple\n2.05\n\n\npear\n1.37\n\n\norange\n3.09\n\n\n\n\n\n\nTable 1 is created using markdown."
-  },
-  {
-    "objectID": "files/lectures/test.html#tables-1",
-    "href": "files/lectures/test.html#tables-1",
-    "title": "Lecture Title",
-    "section": "Tables",
-    "text": "Tables\n\nknitr::kable(head(CO2))\n\n\n\nTable 2: Carbon Dioxide Uptake in Grass Plants (Data from R)\n\n\n\n\n\n\nPlant\nType\nTreatment\nconc\nuptake\n\n\n\n\nQn1\nQuebec\nnonchilled\n95\n16.0\n\n\nQn1\nQuebec\nnonchilled\n175\n30.4\n\n\nQn1\nQuebec\nnonchilled\n250\n34.8\n\n\nQn1\nQuebec\nnonchilled\n350\n37.2\n\n\nQn1\nQuebec\nnonchilled\n500\n35.3\n\n\nQn1\nQuebec\nnonchilled\n675\n39.2\n\n\n\n\n\n\n\n\nFor details of Table 2, check by running ?CO2 in R console."
-  },
-  {
-    "objectID": "files/lectures/test.html#images",
-    "href": "files/lectures/test.html#images",
-    "title": "Lecture Title",
-    "section": "Images",
-    "text": "Images\n\n\n\nRandom Image from Picsum"
-  },
-  {
-    "objectID": "files/lectures/test.html#references",
-    "href": "files/lectures/test.html#references",
-    "title": "Lecture Title",
-    "section": "References",
-    "text": "References"
-  },
-  {
-    "objectID": "files/lectures/W04-L1-dependent-t.html",
-    "href": "files/lectures/W04-L1-dependent-t.html",
-    "title": "Dependent t-Tests",
-    "section": "",
-    "text": "In the last lecture, we reviewed statistical inference on two independent means.\n\nCI for \\(\\mu_1-\\mu_2\\)\nHypothesis test for \\(\\mu_1-\\mu_2\\) (two-sample t-test)\n\nToday, we will focus on drawing conclusions about two dependent means.\n\nCI for \\(\\mu_d = \\mu_1-\\mu_2\\)\nHypothesis test for \\(\\mu_d = \\mu_1-\\mu_2\\) (paired t-test)"
-  },
-  {
-    "objectID": "files/lectures/W04-L1-dependent-t.html#introduction",
-    "href": "files/lectures/W04-L1-dependent-t.html#introduction",
-    "title": "Dependent t-Tests",
-    "section": "",
-    "text": "In the last lecture, we reviewed statistical inference on two independent means.\n\nCI for \\(\\mu_1-\\mu_2\\)\nHypothesis test for \\(\\mu_1-\\mu_2\\) (two-sample t-test)\n\nToday, we will focus on drawing conclusions about two dependent means.\n\nCI for \\(\\mu_d = \\mu_1-\\mu_2\\)\nHypothesis test for \\(\\mu_d = \\mu_1-\\mu_2\\) (paired t-test)"
-  },
-  {
-    "objectID": "files/lectures/W04-L1-dependent-t.html#independent-vs.-dependent-data",
-    "href": "files/lectures/W04-L1-dependent-t.html#independent-vs.-dependent-data",
-    "title": "Dependent t-Tests",
-    "section": "Independent vs. Dependent Data",
-    "text": "Independent vs. Dependent Data\n\n\n\n\n\n\nIndependent data\n\n\n\nAn individual selected for one sample does not dictate which individual is to be in a second sample.\nIn the data, there is not a way to link the individuals in the sample.\n\n\n\n\n\n\n\n\nDependent data\n\n\n\nAn individual selected to be in one sample is used to determine the individual in the second sample.\nIn the data, there is a way to link the individuals in the sample.\n\n\n\nExamples:\n\nTwo sections of STA4173\nProject grades in one section of STA4173\nMale and female penguins\nPrices online vs. in store at Target"
-  },
-  {
-    "objectID": "files/lectures/W04-L1-dependent-t.html#estimating-the-difference-between-two-dependent-means",
-    "href": "files/lectures/W04-L1-dependent-t.html#estimating-the-difference-between-two-dependent-means",
-    "title": "Dependent t-Tests",
-    "section": "Estimating the Difference Between Two Dependent Means",
-    "text": "Estimating the Difference Between Two Dependent Means\n\nWe are now interested in comparing two dependent groups.\nWe assume that the two groups come from the same population and are going to examine the difference,\n\n\\[\nd = y_{i, 1} - y_{i, 2}\n\\]\n\nAfter drawing samples, we have the following,\n\n\\(\\bar{d}\\) estimates \\(\\mu_d\\),\n\\(s^2_d\\) estimates \\(\\sigma^2_d\\), and\n\\(n\\) is the sample size."
-  },
-  {
-    "objectID": "files/lectures/W04-L1-dependent-t.html#ci-for-the-difference-between-two-dependent-means",
-    "href": "files/lectures/W04-L1-dependent-t.html#ci-for-the-difference-between-two-dependent-means",
-    "title": "Dependent t-Tests",
-    "section": "CI for the Difference Between Two Dependent Means",
-    "text": "CI for the Difference Between Two Dependent Means\n\n\n\n\n\n\n\\(\\mathbf{(1-\\boldsymbol\\alpha)100\\%}\\) confidence interval for \\(\\mathbf{\\boldsymbol\\mu_d}\\)\n\n\n\n\\[ \\bar{d} \\pm t_{\\alpha/2} \\frac{s_d}{\\sqrt{n}} \\]\n\nwhere \\(t_{\\alpha/2}\\) has \\(n-1\\) degrees of freedom.\nTo construct this interval, we require either:\n\nthe differences to be normally distributed or\nthe sample size is sufficiently large (\\(n \\ge 30\\))\n\n\n\n\n\nR syntax:\n\n\nt.test(dataset_name$variable1_name,\n       dataset_name$variable2_name, \n       paired = TRUE, \n       conf.level = confidence_level)"
-  },
-  {
-    "objectID": "files/lectures/W04-L1-dependent-t.html#ci-for-the-difference-between-two-dependent-means-1",
-    "href": "files/lectures/W04-L1-dependent-t.html#ci-for-the-difference-between-two-dependent-means-1",
-    "title": "Dependent t-Tests",
-    "section": "CI for the Difference Between Two Dependent Means",
-    "text": "CI for the Difference Between Two Dependent Means\n\nInsurance adjusters are concerned about the high estimates they are receiving for auto repairs from garage I compared to garage II.\n15 cars were taken to both garages for separate estimates of repair costs.\n\n\nlibrary(tidyverse)\ngarage &lt;- tibble(g1 = c(17.6, 20.2, 19.5, 11.3, 13.0, \n                        16.3, 15.3, 16.2, 12.2, 14.8,\n                        21.3, 22.1, 16.9, 17.6, 18.4), \n                 g2 = c(17.3, 19.1, 18.4, 11.5, 12.7, \n                        15.8, 14.9, 15.3, 12.0, 14.2, \n                        21.0, 21.0, 16.1, 16.7, 17.5))\n\n\nConstruct the 95% confidence interval for the average difference between the two garages.\nRemember the R syntax:\n\n\nt.test(dataset_name$variable1_name,\n       dataset_name$variable2_name, \n       paired = TRUE, \n       conf.level = confidence_level)"
-  },
-  {
-    "objectID": "files/lectures/W04-L1-dependent-t.html#ci-for-the-difference-between-two-dependent-means-2",
-    "href": "files/lectures/W04-L1-dependent-t.html#ci-for-the-difference-between-two-dependent-means-2",
-    "title": "Dependent t-Tests",
-    "section": "CI for the Difference Between Two Dependent Means",
-    "text": "CI for the Difference Between Two Dependent Means\n\nt.test(garage$g1, \n       garage$g2, \n       paired = TRUE, \n       conf.level = 0.95)\n\n\n    Paired t-test\n\ndata:  garage$g1 and garage$g2\nt = 6.0234, df = 14, p-value = 3.126e-05\nalternative hypothesis: true mean difference is not equal to 0\n95 percent confidence interval:\n 0.3949412 0.8317254\nsample estimates:\nmean difference \n      0.6133333 \n\n\n\nThe 95% CI for \\(\\mu_d\\), where \\(d = x_{\\text{I}} - x_{\\text{II}}\\) is (0.39, 0.83).\nFrom the problem statement:\n\nInsurance adjusters are concerned about the high estimates they are receiving for auto repairs from garage I compared to garage II.\n\nCan we say that estimates from garage I are higher than those from garage II?"
-  },
-  {
-    "objectID": "files/lectures/W04-L1-dependent-t.html#paired-t-test-for-two-dependent-means",
-    "href": "files/lectures/W04-L1-dependent-t.html#paired-t-test-for-two-dependent-means",
-    "title": "Dependent t-Tests",
-    "section": "Paired t-Test for Two Dependent Means",
-    "text": "Paired t-Test for Two Dependent Means\nHypotheses\n\n\\(H_0:\\) \\(\\mu_d = \\mu_0\\) \\(|\\) \\(H_0:\\) \\(\\mu_d \\le \\mu_0\\) | \\(H_0:\\) \\(\\mu_d \\ge \\mu_0\\)\n\\(H_1:\\) \\(\\mu_d \\ne \\mu_0\\) | \\(H_1:\\) \\(\\mu_d &gt; \\mu_0\\) | \\(H_1:\\) \\(\\mu_d &lt; \\mu_0\\)\n\nTest Statistic & p-Value\n\n\\(t_0 = \\frac{\\bar{d}-\\mu_0}{\\frac{s_d}{\\sqrt{n}}}\\)\n\\(p = 2 P[t \\ge |t_0|]\\) | \\(p = P[t \\ge |t_0|]\\) | \\(p = P[t \\le |t_0|]\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\).\n\nConclusion/Interpretation\n\n[Reject or fail to reject] \\(H_0\\).\nThere [is or is not] sufficient evidence to suggest [alternative hypothesis in words]."
-  },
-  {
-    "objectID": "files/lectures/W04-L1-dependent-t.html#paired-t-test",
-    "href": "files/lectures/W04-L1-dependent-t.html#paired-t-test",
-    "title": "Dependent t-Tests",
-    "section": "Paired t-Test",
-    "text": "Paired t-Test\n\nR syntax:\n\n\nt.test(dataset_name$variable1_name, \n       dataset_name$variable2_name, \n       paired = TRUE, \n       mu = hypothesized_difference,\n       alternative = \"alternative\")\n\n\nImportant!!\n\nWe are estimating \\(\\mu_1 - \\mu_2\\), but R is going to subtract in the order we state in the t.test() function."
-  },
-  {
-    "objectID": "files/lectures/W04-L1-dependent-t.html#paired-t-test-example",
-    "href": "files/lectures/W04-L1-dependent-t.html#paired-t-test-example",
-    "title": "Dependent t-Tests",
-    "section": "Paired t-Test: Example",
-    "text": "Paired t-Test: Example\n\nLet’s now formally determine if garage I’s estimates are higher than garage II’s. Test at the \\(\\alpha=0.05\\) level.\nRecall the data,\n\n\ngarage &lt;- tibble(g1 = c(17.6, 20.2, 19.5, 11.3, 13.0, \n                        16.3, 15.3, 16.2, 12.2, 14.8,\n                        21.3, 22.1, 16.9, 17.6, 18.4), \n                 g2 = c(17.3, 19.1, 18.4, 11.5, 12.7, \n                        15.8, 14.9, 15.3, 12.0, 14.2, \n                        21.0, 21.0, 16.1, 16.7, 17.5))\n\n\nand the R syntax:\n\n\nt.test(dataset_name$variable1_name, \n       dataset_name$variable2_name, \n       paired = TRUE, \n       mu = hypothesized_difference,\n       alternative = \"alternative\")"
-  },
-  {
-    "objectID": "files/lectures/W04-L1-dependent-t.html#paired-t-test-example-1",
-    "href": "files/lectures/W04-L1-dependent-t.html#paired-t-test-example-1",
-    "title": "Dependent t-Tests",
-    "section": "Paired t-Test: Example",
-    "text": "Paired t-Test: Example\n\nt.test(garage$g1, \n       garage$g2,\n       paired = TRUE,\n       mu = 0,\n       alternative = \"greater\")\n\n\n    Paired t-test\n\ndata:  garage$g1 and garage$g2\nt = 6.0234, df = 14, p-value = 1.563e-05\nalternative hypothesis: true mean difference is greater than 0\n95 percent confidence interval:\n 0.4339886       Inf\nsample estimates:\nmean difference \n      0.6133333 \n\n\n\nAre the estimates from garage I significantly higher than those from garage II?"
-  },
-  {
-    "objectID": "files/lectures/W04-L1-dependent-t.html#paired-t-test-example-2",
-    "href": "files/lectures/W04-L1-dependent-t.html#paired-t-test-example-2",
-    "title": "Dependent t-Tests",
-    "section": "Paired t-Test: Example",
-    "text": "Paired t-Test: Example\nHypotheses\n\n\\(H_0: \\ \\mu_{\\text{I}} \\le \\mu_{\\text{II}}\\) OR \\(\\mu_{d} \\le 0\\), where \\(\\mu_d = \\mu_{\\text{I}} - \\mu_{\\text{II}}\\)\n\\(H_1: \\ \\mu_{\\text{I}} &gt; \\mu_{\\text{II}}\\) OR \\(\\mu_{d} &gt; 0\\)\n\nTest Statistic and p-Value\n\n\\(t_0 = 6.023\\)\n\\(p &lt; 0.001\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha = 0.05\\).\n\nConclusion/Interpretation\n\nReject \\(H_0\\).\nThere is sufficient evidence to suggest the estimates at garage I are higher than that of garage II."
-  },
-  {
-    "objectID": "files/lectures/W04-L1-dependent-t.html#wrap-up",
-    "href": "files/lectures/W04-L1-dependent-t.html#wrap-up",
-    "title": "Dependent t-Tests",
-    "section": "Wrap Up",
-    "text": "Wrap Up\n\nToday we reviewed the dependent t-test.\n\nConfidence intervals\nHypothesis testing\n\nNext lectures:\n\nAssumptions on t-tests.\nWilcoxon rank sum\nWilcoxon signed rank"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-analysis-of-variance",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-analysis-of-variance",
-    "title": "One-Way Analysis of Variance",
-    "section": "Introduction: Analysis of Variance",
-    "text": "Introduction: Analysis of Variance\n\nWe have previously discussed testing the difference between two groups.\n\nWhat about when there are three or more groups?\n\nWe will use a method called analysis of variance (ANOVA).\n\nThis method partitions the variance of the outcome into variance due to the groups and variance due to “other” factors.\n\nFun fact: the two-sample t-test is a special case of ANOVA.\n\nIf you perform ANOVA when comparing two means, you will obtain the same results as the two-sample t-test."
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#hypotheses",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#hypotheses",
-    "title": "One-Way Analysis of Variance",
-    "section": "Hypotheses",
-    "text": "Hypotheses\n\nHypotheses all take the same form:\n\nH_0: \\ \\mu_1 = \\mu_2 = ... = \\mu_k\nH_1: at least one is different\n\nNote 1: you must fill in the “k” when writing hypotheses!\n\ne.g., if there are four means, your hypotheses are\n\nH_0: \\ \\mu_1 = \\mu_2 = \\mu_3 = \\mu_4\nH_1: at least one is different\n\n\nNote 2: ANOVA does not tell us which means are different, just if a general difference exists!"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-table",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-table",
-    "title": "One-Way Analysis of Variance",
-    "section": "ANOVA Table",
-    "text": "ANOVA Table\n\nThe computations for ANOVA are more involved than what we’ve seen before.\nAn ANOVA table will be constructed in order to perform the hypothesis test.\n\n\n\n\n\n\n\n\n\n\n\nSource\nSum of Squares\ndf\nMean Squares\nF\n\n\n\n\nTreatment\nSSTrt\ndfTrt\nMSTrt\nF0\n\n\nError\nSSE\ndfE\nMSE\n\n\n\nTotal\nSSTot\ndfTot\n\n\n\n\n\n\nOnce this is put together, we can perform the hypothesis test.\n\nOur test statistic is the F0."
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#the-f-distribution",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#the-f-distribution",
-    "title": "One-Way Analysis of Variance",
-    "section": "The F Distribution",
-    "text": "The F Distribution\n\nThe F distribution is derived as the ratio of two variances.\n\nThe variances each have degrees of freedom: dfnumerator and dfdenominator\n\nThe F distribution’s shape depends on the df,"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations",
-    "title": "One-Way Analysis of Variance",
-    "section": "ANOVA Computations",
-    "text": "ANOVA Computations\n\nAgain, here’s where we are headed with our computations:\n\n\n\n\n\n\n\n\n\n\n\nSource\nSum of Squares\ndf\nMean Squares\nF\n\n\n\n\nTreatment\nSSTrt\ndfTrt\nMSTrt\nF0\n\n\nError\nSSE\ndfE\nMSE\n\n\n\nTotal\nSSTot\ndfTot\n\n\n\n\n\n\nWe are partitioning the variance of our outcome into:\n\nVariance due to the grouping (treatment)\nVariance due to “other” factors (error)\n\nThink of this like a “catch all” for other sources of error – things we did not adjust for in our model."
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-1",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-1",
-    "title": "One-Way Analysis of Variance",
-    "section": "ANOVA Computations",
-    "text": "ANOVA Computations\n\nBefore we begin our computations, it would be helpful if we know\n\n \\bar{x}, \\ \\ n_i, \\ \\ \\bar{x}_i, \\ \\ s_i^2 \n\nwhere,\n\n\\bar{x} is the overall mean,\nn_i is the sample size for group i,\n\\bar{x}_i is the mean for group i, and\ns_i^2 is the variance for group i"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-2",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-2",
-    "title": "One-Way Analysis of Variance",
-    "section": "ANOVA Computations",
-    "text": "ANOVA Computations\n\nWe begin our computations with the sums of squares:\n\n\n\\begin{align*}\n    \\text{SS}_{\\text{Trt}} &= \\sum_{i=1}^k n_i(\\bar{x}_i-\\bar{x})^2 \\\\\n    \\text{SS}_{\\text{E}} &= \\sum_{i=1}^k (n_i-1)s_i^2 \\\\\n    \\text{SS}_{\\text{Tot}} &= \\text{SS}_{\\text{Trt}} + \\text{SS}_{\\text{E}}\n\\end{align*}\n\n\nand each sum of squares has degrees of freedom:\n\n\\text{df}_{\\text{Trt}} = k-1 (number of groups – 1)\n\\text{df}_{\\text{E}} = n-k (overall sample size – number of groups)\n\\text{df}_{\\text{Tot}} = n-1 (overall sample size – 1) = \\text{df}_{\\text{Trt}} + \\text{df}_{\\text{E}}"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-3",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-3",
-    "title": "One-Way Analysis of Variance",
-    "section": "ANOVA Computations",
-    "text": "ANOVA Computations\n\nOnce we have the sum of squares and corresponding degrees of freedom, we have the mean squares.\nGenerally, mean squares are the sum of square divided by the df,  \\text{MS}_X = \\frac{\\text{SS}_X}{\\text{df}_X}\nIn the case of one-way ANOVA, \n\\begin{align*}\n  \\text{MS}_{\\text{Trt}} &= \\frac{\\text{SS}_{\\text{Trt}}}{\\text{df}_{\\text{Trt}}} \\\\\n  \\text{MS}_{\\text{E}} &= \\frac{\\text{SS}_{\\text{E}}}{\\text{df}_{\\text{E}}}\n\\end{align*}\n\n\nNote that there is no \\text{MS}_{\\text{Tot}}!"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-4",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-4",
-    "title": "One-Way Analysis of Variance",
-    "section": "ANOVA Computations",
-    "text": "ANOVA Computations\n\nFinally, we have the test statistic.\nGenerally, we construct an F for ANOVA by dividing the MS of interest by MS_{\\text{E}},  F_X = \\frac{\\text{MS}_X}{\\text{MS}_{\\text{E}}} \nIn one-way ANOVA, we are only constructing the F for treatment, F_0 = \\frac{\\text{MS}_{\\text{Trt}}}{\\text{MS}_{\\text{E}}}"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-5",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-computations-5",
-    "title": "One-Way Analysis of Variance",
-    "section": "ANOVA Computations",
-    "text": "ANOVA Computations\n\nWe are finally done constructing our ANOVA table! As a reminder,\n\n\n\n\n\n\n\n\n\n\n\nSource\nSum of Squares\ndf\nMean Squares\nF\n\n\n\n\nTreatment\nSSTrt\ndfTrt\nMSTrt\nF0\n\n\nError\nSSE\ndfE\nMSE\n\n\n\nTotal\nSSTot\ndfTot"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-r-syntax",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#anova-r-syntax",
-    "title": "One-Way Analysis of Variance",
-    "section": "ANOVA: R Syntax",
-    "text": "ANOVA: R Syntax\n\nWe can use the aov() and summary() functions.\n\n\nm &lt;- aov(continuous_variable ~ grouping_variable,\n         data = dataset_name)\nsummary(m)\n\n\nHowever, note that ANOVA is regression (and regression is ANOVA).\n\nWe can also use lm() to define the model and anova() to construct the ANOVA table.\n\n\n\nm &lt;- lm(continuous_variable ~ grouping_variable,\n         data = dataset_name)\nanova(m)"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental",
-    "title": "One-Way Analysis of Variance",
-    "section": "Example - Dental",
-    "text": "Example - Dental\n\nProsthodontists specialize in the restoration of oral function, including the use of dental implants, veneers, dentures, and crowns. A researcher wanted to compare the shear bond strength of different repair kits for repairs of chipped porcelain veneer.\nHe randomly divided 20 porcelain specimens into four treatment groups: group 1 used the Cojet system, group 2 used the Silistor system, group 3 used the Cimara system, and group 4 used the Ceramic Repair system.\nAt the conclusion of the study, shear bond strength (in megapascals, MPa) was measured according to ISO 10477. The data are as follows,\n\n\nstrength &lt;- c(15.4, 12.9, 17.2, 16.6, 19.3,\n              17.2, 14.3, 17.6, 21.6, 17.5,\n               5.5,  7.7, 12.2, 11.4, 16.4,\n              11.0, 12.4, 13.5,  8.9,  8.1)\nsystem &lt;- c(rep(\"Cojet\",5), rep(\"Silistor\",5), rep(\"Cimara\",5), rep(\"Ceramic\",5))\ndata &lt;- tibble(system, strength)"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental-1",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental-1",
-    "title": "One-Way Analysis of Variance",
-    "section": "Example - Dental",
-    "text": "Example - Dental\n\n\n\n  \n\n\n\n\nWhat is the continuous variable?\nWhat is the grouping variable?"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental-2",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental-2",
-    "title": "One-Way Analysis of Variance",
-    "section": "Example - Dental",
-    "text": "Example - Dental\n\nOur first step will be to construct an ANOVA table for the data.\n\n\nm1 &lt;- aov(strength ~ system, data = data)\nsummary(m1)\n\n            Df Sum Sq Mean Sq F value  Pr(&gt;F)   \nsystem       3  200.0   66.66   7.545 0.00229 **\nResiduals   16  141.4    8.84                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nm2 &lt;- lm(strength ~ system, data = data)\nanova(m2)"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental-3",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental-3",
-    "title": "One-Way Analysis of Variance",
-    "section": "Example - Dental",
-    "text": "Example - Dental\n\nUsing the dental data:\n\n\nsummary(m1)\n\n            Df Sum Sq Mean Sq F value  Pr(&gt;F)   \nsystem       3  200.0   66.66   7.545 0.00229 **\nResiduals   16  141.4    8.84                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nDetermine if there is a difference in average strength between the groups. Test at the \\alpha=0.01 level."
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#hypothesis-testing",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#hypothesis-testing",
-    "title": "One-Way Analysis of Variance",
-    "section": "Hypothesis Testing",
-    "text": "Hypothesis Testing\n\nHypotheses\n\nH_0: \\ \\mu_1 = \\mu_2 = ... = \\mu_k\nH_1: at least one mean is different\n\nTest Statistic\n\nF_0 (pulled from the ANOVA table)\n\np-Value\n\np = P[F_0 \\ge F_{\\text{df}_{\\text{Trt}}, \\text{df}_{\\text{E}}}]\n\nRejection Region\n\nReject H_0 if p&lt;\\alpha."
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental-4",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---dental-4",
-    "title": "One-Way Analysis of Variance",
-    "section": "Example - Dental",
-    "text": "Example - Dental\n\nHypotheses\n\nH_0: \\ \\mu_1 = \\mu_2 = \\mu_3 = \\mu_4\nH_1: at least one mean is different\n\nTest Statistic and p-Value\n\nF_0 = 7.545\np = 0.002\n\nRejection Region\n\nReject H_0 if p&lt;\\alpha; \\alpha = 0.01.\n\nConclusion/Interpretation\n\nReject H_0. There is sufficient evidence to suggest that there is a difference in average strength between the four groups."
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---penguins",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---penguins",
-    "title": "One-Way Analysis of Variance",
-    "section": "Example - Penguins",
-    "text": "Example - Penguins\n\nRecall the Palmer Penguin data in R.\n\n\nANOVABoxplotGraph Code\n\n\n\nm4 &lt;- aov(bill_length_mm ~ species, data = penguins)\n\nError: object 'penguins' not found\n\nsummary(m4)\n\nError: object 'm4' not found\n\n\n\n\n\n\n\nError: object 'penguins' not found\n\n\n\n\n\n\npenguins %&gt;% ggplot(aes(y = bill_length_mm, x = species, fill = species)) +\n  geom_boxplot() +\n  labs(x = \"Penguin Species\",\n       y = \"Bill Length (mm)\") +\n  theme_bw() +\n  theme(legend.position=\"none\")"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---penguins-1",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---penguins-1",
-    "title": "One-Way Analysis of Variance",
-    "section": "Example - Penguins",
-    "text": "Example - Penguins\n\nTukey’sFisher’s\n\n\n\nLet’s use Tukey’s test to determine what differences exist between the species.\n\n\nTukeyHSD(m4)$species\n\nError: object 'm4' not found\n\n\n\n\n\nresults &lt;- summary(m4)\n\nError: object 'm4' not found\n\nLSD.test(penguins$bill_length_mm, \n         penguins$species, \n         results[[1]]$Df[2], \n         results[[1]]$`Mean Sq`[2])[5]\n\nError: object 'penguins' not found"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-posthoc-testing",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-posthoc-testing",
-    "title": "One-Way Analysis of Variance",
-    "section": "Introduction: Posthoc Testing",
-    "text": "Introduction: Posthoc Testing\n\nToday we have introduced ANOVA. Recall the hypotheses,\n\nH_0: \\mu_1 = \\mu_2 = ... = \\mu_k\nH_1: at least one \\mu_i is different\n\nThe F test does not tell us which mean is different… only that a difference exists.\nIn theory, we could perform repeated t tests to determine pairwise differences.\n\nRecall that ANOVA is an extension of the t test… or that the t test is a special case of ANOVA.\nHowever, this will increase the Type I error rate (\\alpha)."
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-posthoc-testing-1",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-posthoc-testing-1",
-    "title": "One-Way Analysis of Variance",
-    "section": "Introduction: Posthoc Testing",
-    "text": "Introduction: Posthoc Testing\n\nRecall that the Type I error rate, \\alpha, is the probability of incorrectly rejecting H_0.\n\ni.e., we are saying there is a difference between the means when there is actually not a difference.\n\nSuppose we are comparing 5 groups.\n\nThis is 10 pairwise comparisons!!\n\n1-2, 1-3, 1-4, 1-5, 2-3, 2-4, 2-5, 3-4, 3-5, 4-5\n\nIf we perform repeated t tests under \\alpha=0.05, we are inflating the Type I error to 0.40! 😵"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-posthoc-testing-2",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-posthoc-testing-2",
-    "title": "One-Way Analysis of Variance",
-    "section": "Introduction: Posthoc Testing",
-    "text": "Introduction: Posthoc Testing\n\nWhen performing posthoc comparisons, we can choose one of two paths:\n\nControl the Type I (familywise) error rate.\nDo not control the Type I error rate.\n\nNote that controlling the Type I error rate is more conservative than when we do not control it.\n\n“Conservative” = more difficult to reject.\n\nGenerally, statisticians:\n\ndo not control the Type I error rate if examining the results of pilot/preliminary studies that are exploring for general relationships.\ndo control the Type I error rate if examining the results of confirmatory studies and are attempting to confirm relationships observed in pilot/preliminary studies."
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-posthoc-testing-3",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#introduction-posthoc-testing-3",
-    "title": "One-Way Analysis of Variance",
-    "section": "Introduction: Posthoc Testing",
-    "text": "Introduction: Posthoc Testing\n\nThe posthoc tests we will learn:\n\nTukey’s test\n\nPerforms all pairwise tests and controls the Type I error rate\n\nFisher’s least significant difference\n\nPerforms all pairwise tests but does not control the Type I error rate\n\nDunnett’s test\n\nCompares each group to a control group and controls the Type I error rate\n\n\nCaution: we should only perform posthoc tests if we have determined that a general difference exists!\n\ni.e., we rejected when looking at the F test in ANOVA"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example",
-    "title": "One-Way Analysis of Variance",
-    "section": "Example",
-    "text": "Example\n\nRecall the dental example from earlier,\n\n\nm1 &lt;- aov(strength ~ system, data = data)\nsummary(m1)\n\n            Df Sum Sq Mean Sq F value  Pr(&gt;F)   \nsystem       3  200.0   66.66   7.545 0.00229 **\nResiduals   16  141.4    8.84                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nAre we justified in posthoc testing? (Recall: \\alpha=0.01)."
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#tukeys-test",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#tukeys-test",
-    "title": "One-Way Analysis of Variance",
-    "section": "Tukey’s Test",
-    "text": "Tukey’s Test\n\nTukey’s test allows us to do all pairwise comparisons while controlling \\alpha.\nThe underlying idea of the comparison:\n\nWe declare \\mu_i \\ne \\mu_j if |\\bar{y}_i - \\bar{y}_j| \\ge W, where  W = \\frac{q_{\\alpha}(k, \\text{df}_{\\text{E}})}{\\sqrt{2}} \\sqrt{\\text{MSE} \\left( \\frac{1}{n_i} + \\frac{1}{n_j} \\right)} \n\nq_{\\alpha}(k, \\text{df}_{\\text{E}}) is the critical value from the Studentized range distribution.\n\n\nWe will use the TukeyHSD() function.\n\nNote that this requires us to have created our model using the aov() function.\n\n\n\nm &lt;- aov(continuous_variable ~ grouping_variable, data = dataset_name)\nTukeyHSD(m)$grouping_variable"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#tukeys-test-1",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#tukeys-test-1",
-    "title": "One-Way Analysis of Variance",
-    "section": "Tukey’s Test",
-    "text": "Tukey’s Test\n\nLet’s apply Tukey’s to the dental data.\n\n\nm &lt;- aov(strength ~ system, data = data)\nTukeyHSD(m, conf.level = 0.99)$system\n\n                  diff         lwr       upr       p adj\nCimara-Ceramic   -0.14 -7.04151507  6.761515 0.999845202\nCojet-Ceramic     5.50 -1.40151507 12.401515 0.044147158\nSilistor-Ceramic  6.86 -0.04151507 13.761515 0.010458208\nCojet-Cimara      5.64 -1.26151507 12.541515 0.038206781\nSilistor-Cimara   7.00  0.09848493 13.901515 0.008990873\nSilistor-Cojet    1.36 -5.54151507  8.261515 0.886304336\n\n\n\nWhich are significantly different at the \\alpha=0.01 level?"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#tukeys-test-2",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#tukeys-test-2",
-    "title": "One-Way Analysis of Variance",
-    "section": "Tukey’s Test",
-    "text": "Tukey’s Test\n\nLet’s apply Tukey’s to the dental data.\n\n\nm &lt;- aov(strength ~ system, data = data)\nTukeyHSD(m, conf.level = 0.99)$system\n\n                  diff         lwr       upr       p adj\nCimara-Ceramic   -0.14 -7.04151507  6.761515 0.999845202\nCojet-Ceramic     5.50 -1.40151507 12.401515 0.044147158\nSilistor-Ceramic  6.86 -0.04151507 13.761515 0.010458208\nCojet-Cimara      5.64 -1.26151507 12.541515 0.038206781\nSilistor-Cimara   7.00  0.09848493 13.901515 0.008990873\nSilistor-Cojet    1.36 -5.54151507  8.261515 0.886304336"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#fishers-test",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#fishers-test",
-    "title": "One-Way Analysis of Variance",
-    "section": "Fisher’s Test",
-    "text": "Fisher’s Test\n\nFisher’s allows us to test all pairwise comparisons but control the \\alpha.\nThe underlying idea of the comparison:\n\nWe declare \\mu_i \\ne \\mu_j if |\\bar{y}_i - \\bar{y}_j| \\ge \\text{LSD}, where  \\text{LSD} = t_{1-\\alpha/2, \\text{df}_\\text{E}} \\sqrt{\\text{MSE} \\left( \\frac{1}{n_i} + \\frac{1}{n_j} \\right)} \n\nWe will use the LSD.test() function from the agricolae package.\n\nNote that, like Tukey’s, this requires us to have created our model using the aov() function.\n\n\n\nlibrary(agricolae)\nresults &lt;- summary(m)\n(LSD.test(dataset_name$continuous_variable, # continuous outcome\n          dataset_name$grouping_variable, # grouping variable\n          results[[1]]$Df[2], # df_E\n          results[[1]]$`Mean Sq`[2], # MSE\n          alpha = alpha_level) # can omit if alpha = 0.05\n  )[5] # limit to only the pairwise comparison results"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#fishers-test-1",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#fishers-test-1",
-    "title": "One-Way Analysis of Variance",
-    "section": "Fisher’s Test",
-    "text": "Fisher’s Test\n\nLet’s apply Fisher’s to the dental data.\n\n\nlibrary(agricolae)\nresults &lt;- summary(m)\nLSD.test(data$strength, \n         data$system, \n         results[[1]]$Df[2], \n         results[[1]]$`Mean Sq`[2],\n         alpha = 0.01)[5]\n\n$groups\n         data$strength groups\nSilistor         17.64      a\nCojet            16.28      a\nCeramic          10.78      b\nCimara           10.64      b\n\n\n\nWhich are significantly different at the \\alpha=0.01 level?"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#fishers-test-2",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#fishers-test-2",
-    "title": "One-Way Analysis of Variance",
-    "section": "Fisher’s Test",
-    "text": "Fisher’s Test\n\nLet’s apply Fisher’s to the dental data.\n\n\nlibrary(agricolae)\nresults &lt;- summary(m)\nLSD.test(data$strength, \n         data$system, \n         results[[1]]$Df[2], \n         results[[1]]$`Mean Sq`[2],\n         alpha = 0.01)[5]\n\n$groups\n         data$strength groups\nSilistor         17.64      a\nCojet            16.28      a\nCeramic          10.78      b\nCimara           10.64      b\n\n\n\nWhich are significantly different at the \\alpha=0.01 level?\n\nSilistor-Ceramic\nSilistor-Cimara\nCojet-Ceramic\nCojet-Cimara"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#dunnetts-test",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#dunnetts-test",
-    "title": "One-Way Analysis of Variance",
-    "section": "Dunnett’s Test",
-    "text": "Dunnett’s Test\n\nDunnett’s test allows us to do all pairwise comparisons against only the control, while controlling \\alpha.\n\nThis has fewer comparisons than Tukey’s because we are not comparing non-control groups to one another.\ni.e., we are sharing the \\alpha between fewer comparisons now, which is preferred if we are not interested in the comparisons between non-control groups.\n\nThe underlying idea of the comparison:\n\nWe declare \\mu_i \\ne \\mu_j if |\\bar{y}_i - \\bar{y}_j| \\ge D, where  D = d_{\\alpha}(k-1, \\text{df}_{\\text{E}}) \\sqrt{\\text{MSE} \\left( \\frac{1}{n_i} + \\frac{1}{n_c} \\right)}, \n\nd_{\\alpha}(k-1, \\text{df}_{\\text{E}}) is the critical value from Dunnett’s table."
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#dunnetts-test-1",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#dunnetts-test-1",
-    "title": "One-Way Analysis of Variance",
-    "section": "Dunnett’s Test",
-    "text": "Dunnett’s Test\n\nWe will use the DunnettTest() function from the DescTools package to perform Dunnett’s test.\n\n\nlibrary(DescTools)\nDunnettTest(x=dataset_name$continuous_variable, \n            g=dataset_name$grouping_variable, \n            control = \"name of control group\")\n\n\nThe p-values are adjusted, so you can directly compare them to the specified \\alpha."
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#dunnetts-test-2",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#dunnetts-test-2",
-    "title": "One-Way Analysis of Variance",
-    "section": "Dunnett’s Test",
-    "text": "Dunnett’s Test\n\nLet’s apply Dunnett’s to the dental data.\n\nWe will treat “Ceramic” as the control group.\n\n\n\nlibrary(DescTools)\nDunnettTest(x=data$strength, \n            g=data$system, \n            control = \"Ceramic\")\n\n\n  Dunnett's test for comparing several treatments with a control :  \n    95% family-wise confidence level\n\n$Ceramic\n                  diff     lwr.ci    upr.ci   pval    \nCimara-Ceramic   -0.14 -5.0138317  4.733832 0.9997    \nCojet-Ceramic     5.50  0.6261683 10.373832 0.0259 *  \nSilistor-Ceramic  6.86  1.9861683 11.733832 0.0059 ** \n\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nWhich are significantly different at the \\alpha=0.01 level?"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---penguins-2",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---penguins-2",
-    "title": "One-Way Analysis of Variance",
-    "section": "Example - Penguins",
-    "text": "Example - Penguins\n\nRecall the Palmer Penguin data in R.\n\n\nANOVABoxplotGraph Code\n\n\n\nm4 &lt;- aov(bill_length_mm ~ species, data = penguins)\nsummary(m4)\n\n             Df Sum Sq Mean Sq F value Pr(&gt;F)    \nspecies       2   7194    3597   410.6 &lt;2e-16 ***\nResiduals   339   2970       9                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n2 observations deleted due to missingness\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\npenguins %&gt;% ggplot(aes(y = bill_length_mm, x = species, fill = species)) +\n  geom_boxplot() +\n  labs(x = \"Penguin Species\",\n       y = \"Bill Length (mm)\") +\n  theme_bw() +\n  theme(legend.position=\"none\")"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---penguins-3",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#example---penguins-3",
-    "title": "One-Way Analysis of Variance",
-    "section": "Example - Penguins",
-    "text": "Example - Penguins\n\nTukey’sFisher’s\n\n\n\nLet’s use Tukey’s test to determine what differences exist between the species.\n\n\nTukeyHSD(m4)$species\n\n                      diff       lwr        upr       p adj\nChinstrap-Adelie 10.042433  9.024859 11.0600064 0.000000000\nGentoo-Adelie     8.713487  7.867194  9.5597807 0.000000000\nGentoo-Chinstrap -1.328945 -2.381868 -0.2760231 0.008899333\n\n\n\n\n\nresults &lt;- summary(m4)\nLSD.test(penguins$bill_length_mm, \n         penguins$species, \n         results[[1]]$Df[2], \n         results[[1]]$`Mean Sq`[2])[5]\n\n$groups\n          penguins$bill_length_mm groups\nChinstrap                48.83382      a\nGentoo                   47.50488      b\nAdelie                   38.79139      c"
-  },
-  {
-    "objectID": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#r-syntax",
-    "href": "files/lectures/W06-L1-one-way-ANOVA-posthoc.html#r-syntax",
-    "title": "One-Way Analysis of Variance",
-    "section": "R Syntax",
-    "text": "R Syntax\n\nWe will use the TukeyHSD() function.\n\nNote that this requires us to have created our model using the aov() function.\n\n\n\nm &lt;- aov([continuous variable] ~ [grouping variable], data = [dataset name])\nTukeyHSD(m)$[grouping variable]"
   }
 ]
