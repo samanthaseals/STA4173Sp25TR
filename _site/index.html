@@ -52,6 +52,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -126,14 +155,14 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>T 01/14</td>
-<td>Independent and dependent <em>t</em> tests</td>
-<td style="text-align: center;"><a href="files/lectures/W02-L1-t-tests.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/lectures/W02-L1-t-tests.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a></td>
+<td>Independent <em>t</em> test</td>
+<td style="text-align: center;"><a href="files/lectures/W02-L1-two-sample-t.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/lectures/W02-L1-two-sample-t.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td>R 01/16</td>
-<td>How to conceptualize research questions as hypotheses</td>
-<td style="text-align: center;"></td>
+<td>Research questions <span class="math inline">\(\to\)</span> hypotheses; dependent t-test</td>
+<td style="text-align: center;"><a href="files/lectures/W02-L2-dependent-t.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/lectures/W02-L2-dependent-t.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
