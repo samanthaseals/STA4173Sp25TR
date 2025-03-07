@@ -26,7 +26,7 @@ title-block-banner: false
 | T 02/25 | Simple linear regression and correlation | <a href="files/lectures/W08-L1-simple-linear-regression.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/lectures/W08-L1-simple-linear-regression.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a> 
 | R 02/27 | Project: Poking at Data | | 
 | T 03/04 | Project: Poking at Data | |
-| R 03/06 | Multiple regression | <a href="files/lectures/W09-L1-multiple-regression.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/lectures/W09-L1-multiple-regression.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a>  
+| R 03/06 | Multiple regression | <a href="files/lectures/W09-L1-multiple-linear-regression.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/lectures/W09-L1-multiple-linear-regression.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a>  
 | T 03/11 | Categorical analysis | <a href="files/lectures/W09-L2-categorical.html"><i class="fa fa-display fa-s" style="color: #8DC8E8;"></i></a> <a href="https://github.com/samanthaseals/STA4173Sp25TR/blob/main/files/lectures/W09-L2-categorical.qmd"><i class="fa fa-paperclip" style="color: #8DC8E8;"></i></a>  
 | R 03/13 | Logistic regression | | 
 | T 03/18 | Spring Break! | | 
